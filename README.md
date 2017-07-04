@@ -46,7 +46,7 @@ To run the unit tests:
 
 ```
 composer install
-./vendor/bin/phpunit
+composer test
 ```
 
 ## Getting Started
