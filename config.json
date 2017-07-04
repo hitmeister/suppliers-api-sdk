@@ -1,0 +1,9 @@
+{
+  "invokerPackage" : "Suppliers\\Api",
+  "packagePath": "",
+  "composerVendorName" : "hitmeister",
+  "gitUserId" : "hitmeister",
+  "composerProjectName" : "suppliers-api-sdk",
+  "gitRepoId" : "suppliers-api-sdk",
+  "artifactVersion" : "0.0.1"
+}
