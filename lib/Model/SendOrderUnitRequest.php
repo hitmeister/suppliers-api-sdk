@@ -11,7 +11,7 @@
  */
 
 /**
- * SMS API
+ * Supplier API SDK
  *
  * This documentation describes SMS API. To use this API you should have an api-key and api-username
  *
@@ -54,10 +54,19 @@ class SendOrderUnitRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id_order_unit' => 'int',
         'carrier' => 'string',
         'tracking_number' => 'string',
         'delivery_note' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'carrier' => null,
+        'tracking_number' => null,
+        'delivery_note' => null
     ];
 
     public static function swaggerTypes()
@@ -65,12 +74,16 @@ class SendOrderUnitRequest implements ArrayAccess
         return self::$swaggerTypes;
     }
 
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
+    }
+
     /**
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
     protected static $attributeMap = [
-        'id_order_unit' => 'id_order_unit',
         'carrier' => 'carrier',
         'tracking_number' => 'tracking_number',
         'delivery_note' => 'delivery_note'
@@ -82,7 +95,6 @@ class SendOrderUnitRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id_order_unit' => 'setIdOrderUnit',
         'carrier' => 'setCarrier',
         'tracking_number' => 'setTrackingNumber',
         'delivery_note' => 'setDeliveryNote'
@@ -94,7 +106,6 @@ class SendOrderUnitRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id_order_unit' => 'getIdOrderUnit',
         'carrier' => 'getCarrier',
         'tracking_number' => 'getTrackingNumber',
         'delivery_note' => 'getDeliveryNote'
@@ -205,7 +216,6 @@ class SendOrderUnitRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id_order_unit'] = isset($data['id_order_unit']) ? $data['id_order_unit'] : null;
         $this->container['carrier'] = isset($data['carrier']) ? $data['carrier'] : null;
         $this->container['tracking_number'] = isset($data['tracking_number']) ? $data['tracking_number'] : null;
         $this->container['delivery_note'] = isset($data['delivery_note']) ? $data['delivery_note'] : null;
@@ -220,15 +230,15 @@ class SendOrderUnitRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id_order_unit'] === null) {
-            $invalid_properties[] = "'id_order_unit' can't be null";
-        }
         if ($this->container['carrier'] === null) {
             $invalid_properties[] = "'carrier' can't be null";
         }
-        $allowed_values = ["burspred", "cargoline", "computeruniverse", "dhl", "dhl_2_mh", "dhl_freight", "dtl", "dpd", "delivery_to_store", "deutsche_post", "dachser", "emons", "fedex", "gls", "gel", "hermes", "hermes_2_mh", "hellmann", "ids_logistik", "iloxx", "kuehne_and_nagel", "rhenus", "other", "other_hauler", "post_italiane", "schenker", "spedition_guettler", "tnt", "trans_fm", "trans", "ups", "zufall"];
+        $allowed_values = $this->getCarrierAllowableValues();
         if (!in_array($this->container['carrier'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'carrier', must be one of 'burspred', 'cargoline', 'computeruniverse', 'dhl', 'dhl_2_mh', 'dhl_freight', 'dtl', 'dpd', 'delivery_to_store', 'deutsche_post', 'dachser', 'emons', 'fedex', 'gls', 'gel', 'hermes', 'hermes_2_mh', 'hellmann', 'ids_logistik', 'iloxx', 'kuehne_and_nagel', 'rhenus', 'other', 'other_hauler', 'post_italiane', 'schenker', 'spedition_guettler', 'tnt', 'trans_fm', 'trans', 'ups', 'zufall'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'carrier', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -243,40 +253,16 @@ class SendOrderUnitRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id_order_unit'] === null) {
-            return false;
-        }
         if ($this->container['carrier'] === null) {
             return false;
         }
-        $allowed_values = ["burspred", "cargoline", "computeruniverse", "dhl", "dhl_2_mh", "dhl_freight", "dtl", "dpd", "delivery_to_store", "deutsche_post", "dachser", "emons", "fedex", "gls", "gel", "hermes", "hermes_2_mh", "hellmann", "ids_logistik", "iloxx", "kuehne_and_nagel", "rhenus", "other", "other_hauler", "post_italiane", "schenker", "spedition_guettler", "tnt", "trans_fm", "trans", "ups", "zufall"];
+        $allowed_values = $this->getCarrierAllowableValues();
         if (!in_array($this->container['carrier'], $allowed_values)) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets id_order_unit
-     * @return int
-     */
-    public function getIdOrderUnit()
-    {
-        return $this->container['id_order_unit'];
-    }
-
-    /**
-     * Sets id_order_unit
-     * @param int $id_order_unit
-     * @return $this
-     */
-    public function setIdOrderUnit($id_order_unit)
-    {
-        $this->container['id_order_unit'] = $id_order_unit;
-
-        return $this;
-    }
 
     /**
      * Gets carrier
@@ -294,9 +280,14 @@ class SendOrderUnitRequest implements ArrayAccess
      */
     public function setCarrier($carrier)
     {
-        $allowed_values = array('burspred', 'cargoline', 'computeruniverse', 'dhl', 'dhl_2_mh', 'dhl_freight', 'dtl', 'dpd', 'delivery_to_store', 'deutsche_post', 'dachser', 'emons', 'fedex', 'gls', 'gel', 'hermes', 'hermes_2_mh', 'hellmann', 'ids_logistik', 'iloxx', 'kuehne_and_nagel', 'rhenus', 'other', 'other_hauler', 'post_italiane', 'schenker', 'spedition_guettler', 'tnt', 'trans_fm', 'trans', 'ups', 'zufall');
-        if ((!in_array($carrier, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'carrier', must be one of 'burspred', 'cargoline', 'computeruniverse', 'dhl', 'dhl_2_mh', 'dhl_freight', 'dtl', 'dpd', 'delivery_to_store', 'deutsche_post', 'dachser', 'emons', 'fedex', 'gls', 'gel', 'hermes', 'hermes_2_mh', 'hellmann', 'ids_logistik', 'iloxx', 'kuehne_and_nagel', 'rhenus', 'other', 'other_hauler', 'post_italiane', 'schenker', 'spedition_guettler', 'tnt', 'trans_fm', 'trans', 'ups', 'zufall'");
+        $allowed_values = $this->getCarrierAllowableValues();
+        if (!in_array($carrier, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'carrier', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['carrier'] = $carrier;
 

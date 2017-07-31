@@ -10,7 +10,7 @@
  */
 
 /**
- * SMS API
+ * Supplier API SDK
  *
  * This documentation describes SMS API. To use this API you should have an api-key and api-username
  *
@@ -137,10 +137,7 @@ class InventoryUnitApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -228,10 +225,7 @@ class InventoryUnitApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -279,11 +273,11 @@ class InventoryUnitApi
      * Update inventory unit
      *
      * @param string $id ID of inventory (required)
-     * @param \Suppliers\Api\Model\CreateInventoryUnitRequest $body Inventory unit object that needs to be updated (required)
+     * @param \Suppliers\Api\Model\UpdateInventoryUnitRequest $body Inventory unit object that needs to be updated (optional)
      * @throws \Suppliers\Api\ApiException on non-2xx response
      * @return void
      */
-    public function updateInventoryUnit($id, $body)
+    public function updateInventoryUnit($id, $body = null)
     {
         list($response) = $this->updateInventoryUnitWithHttpInfo($id, $body);
         return $response;
@@ -295,19 +289,15 @@ class InventoryUnitApi
      * Update inventory unit
      *
      * @param string $id ID of inventory (required)
-     * @param \Suppliers\Api\Model\CreateInventoryUnitRequest $body Inventory unit object that needs to be updated (required)
+     * @param \Suppliers\Api\Model\UpdateInventoryUnitRequest $body Inventory unit object that needs to be updated (optional)
      * @throws \Suppliers\Api\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateInventoryUnitWithHttpInfo($id, $body)
+    public function updateInventoryUnitWithHttpInfo($id, $body = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling updateInventoryUnit');
-        }
-        // verify the required parameter 'body' is set
-        if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateInventoryUnit');
         }
         // parse inputs
         $resourcePath = "/inventory-units/{id}";
@@ -319,7 +309,7 @@ class InventoryUnitApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
         // path params
         if ($id !== null) {
@@ -329,9 +319,6 @@ class InventoryUnitApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -358,7 +345,7 @@ class InventoryUnitApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'PUT',
+                'PATCH',
                 $queryParams,
                 $httpBody,
                 $headerParams,

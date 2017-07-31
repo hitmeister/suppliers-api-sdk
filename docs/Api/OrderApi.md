@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order to cancel |
- **body** | [**\Suppliers\Api\Model\CancelOrderRequest**](../Model/\Suppliers\Api\Model\CancelOrderRequest.md)| Pet object that needs to be added to the store |
+ **body** | [**\Suppliers\Api\Model\CancelOrderRequest**](../Model/CancelOrderRequest.md)| Pet object that needs to be added to the store |
 
 ### Return type
 
@@ -59,7 +59,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -112,7 +112,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

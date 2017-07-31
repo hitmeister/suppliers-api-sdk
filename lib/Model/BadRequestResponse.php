@@ -11,7 +11,7 @@
  */
 
 /**
- * SMS API
+ * Supplier API SDK
  *
  * This documentation describes SMS API. To use this API you should have an api-key and api-username
  *
@@ -57,12 +57,27 @@ class BadRequestResponse implements ArrayAccess
     protected static $swaggerTypes = [
         'status' => 'int',
         'message' => 'string',
-        'errors' => '\Suppliers\Api\Model\BadRequestErrorItemResponse[]'
+        'errors' => 'object'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'status' => null,
+        'message' => null,
+        'errors' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -202,7 +217,7 @@ class BadRequestResponse implements ArrayAccess
 
     /**
      * Gets errors
-     * @return \Suppliers\Api\Model\BadRequestErrorItemResponse[]
+     * @return object
      */
     public function getErrors()
     {
@@ -211,7 +226,7 @@ class BadRequestResponse implements ArrayAccess
 
     /**
      * Sets errors
-     * @param \Suppliers\Api\Model\BadRequestErrorItemResponse[] $errors
+     * @param object $errors
      * @return $this
      */
     public function setErrors($errors)

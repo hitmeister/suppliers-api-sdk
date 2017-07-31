@@ -11,7 +11,7 @@
  */
 
 /**
- * SMS API
+ * Supplier API SDK
  *
  * This documentation describes SMS API. To use this API you should have an api-key and api-username
  *
@@ -54,9 +54,17 @@ class CancelOrderUnitRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id_order_unit' => 'string',
         'reason' => 'string',
         'reason_description' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'reason' => null,
+        'reason_description' => null
     ];
 
     public static function swaggerTypes()
@@ -64,12 +72,16 @@ class CancelOrderUnitRequest implements ArrayAccess
         return self::$swaggerTypes;
     }
 
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
+    }
+
     /**
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
     protected static $attributeMap = [
-        'id_order_unit' => 'id_order_unit',
         'reason' => 'reason',
         'reason_description' => 'reason_description'
     ];
@@ -80,7 +92,6 @@ class CancelOrderUnitRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id_order_unit' => 'setIdOrderUnit',
         'reason' => 'setReason',
         'reason_description' => 'setReasonDescription'
     ];
@@ -91,7 +102,6 @@ class CancelOrderUnitRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id_order_unit' => 'getIdOrderUnit',
         'reason' => 'getReason',
         'reason_description' => 'getReasonDescription'
     ];
@@ -153,7 +163,6 @@ class CancelOrderUnitRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id_order_unit'] = isset($data['id_order_unit']) ? $data['id_order_unit'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['reason_description'] = isset($data['reason_description']) ? $data['reason_description'] : null;
     }
@@ -167,15 +176,15 @@ class CancelOrderUnitRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id_order_unit'] === null) {
-            $invalid_properties[] = "'id_order_unit' can't be null";
-        }
         if ($this->container['reason'] === null) {
             $invalid_properties[] = "'reason' can't be null";
         }
-        $allowed_values = ["other_reason", "buyer_canceled", "customer_return", "undeliverable", "wrong_item_data", "can_not_fulfil", "wrong_price", "fraud"];
+        $allowed_values = $this->getReasonAllowableValues();
         if (!in_array($this->container['reason'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'reason', must be one of 'other_reason', 'buyer_canceled', 'customer_return', 'undeliverable', 'wrong_item_data', 'can_not_fulfil', 'wrong_price', 'fraud'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'reason', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -190,40 +199,16 @@ class CancelOrderUnitRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id_order_unit'] === null) {
-            return false;
-        }
         if ($this->container['reason'] === null) {
             return false;
         }
-        $allowed_values = ["other_reason", "buyer_canceled", "customer_return", "undeliverable", "wrong_item_data", "can_not_fulfil", "wrong_price", "fraud"];
+        $allowed_values = $this->getReasonAllowableValues();
         if (!in_array($this->container['reason'], $allowed_values)) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets id_order_unit
-     * @return string
-     */
-    public function getIdOrderUnit()
-    {
-        return $this->container['id_order_unit'];
-    }
-
-    /**
-     * Sets id_order_unit
-     * @param string $id_order_unit ID of order unit to cancel
-     * @return $this
-     */
-    public function setIdOrderUnit($id_order_unit)
-    {
-        $this->container['id_order_unit'] = $id_order_unit;
-
-        return $this;
-    }
 
     /**
      * Gets reason
@@ -241,9 +226,14 @@ class CancelOrderUnitRequest implements ArrayAccess
      */
     public function setReason($reason)
     {
-        $allowed_values = array('other_reason', 'buyer_canceled', 'customer_return', 'undeliverable', 'wrong_item_data', 'can_not_fulfil', 'wrong_price', 'fraud');
-        if ((!in_array($reason, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'reason', must be one of 'other_reason', 'buyer_canceled', 'customer_return', 'undeliverable', 'wrong_item_data', 'can_not_fulfil', 'wrong_price', 'fraud'");
+        $allowed_values = $this->getReasonAllowableValues();
+        if (!in_array($reason, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'reason', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['reason'] = $reason;
 

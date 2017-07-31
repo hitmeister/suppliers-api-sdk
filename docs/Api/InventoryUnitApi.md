@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteInventoryUnitByID**](InventoryUnitApi.md#deleteInventoryUnitByID) | **DELETE** /inventory-units/{id} | Delete inventory unit by ID
 [**getInventoryUnitByID**](InventoryUnitApi.md#getInventoryUnitByID) | **GET** /inventory-units/{id} | Find inventory unit by ID
-[**updateInventoryUnit**](InventoryUnitApi.md#updateInventoryUnit) | **PUT** /inventory-units/{id} | Update inventory unit
+[**updateInventoryUnit**](InventoryUnitApi.md#updateInventoryUnit) | **PATCH** /inventory-units/{id} | Update inventory unit
 
 
 # **deleteInventoryUnitByID**
@@ -139,7 +139,7 @@ Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 
 $api_instance = new Suppliers\Api\Api\InventoryUnitApi();
 $id = "id_example"; // string | ID of inventory
-$body = new \Suppliers\Api\Model\CreateInventoryUnitRequest(); // \Suppliers\Api\Model\CreateInventoryUnitRequest | Inventory unit object that needs to be updated
+$body = new \Suppliers\Api\Model\UpdateInventoryUnitRequest(); // \Suppliers\Api\Model\UpdateInventoryUnitRequest | Inventory unit object that needs to be updated
 
 try {
     $api_instance->updateInventoryUnit($id, $body);
@@ -154,7 +154,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of inventory |
- **body** | [**\Suppliers\Api\Model\CreateInventoryUnitRequest**](../Model/\Suppliers\Api\Model\CreateInventoryUnitRequest.md)| Inventory unit object that needs to be updated |
+ **body** | [**\Suppliers\Api\Model\UpdateInventoryUnitRequest**](../Model/UpdateInventoryUnitRequest.md)| Inventory unit object that needs to be updated | [optional]
 
 ### Return type
 
@@ -166,7 +166,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

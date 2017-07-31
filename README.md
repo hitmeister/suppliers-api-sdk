@@ -92,7 +92,7 @@ Class | Method | HTTP request | Description
 *InventoryApi* | [**getInventoryUnitsByInventoryID**](docs/Api/InventoryApi.md#getinventoryunitsbyinventoryid) | **GET** /inventories/{id}/units | Find all inventory units by inventory ID
 *InventoryUnitApi* | [**deleteInventoryUnitByID**](docs/Api/InventoryUnitApi.md#deleteinventoryunitbyid) | **DELETE** /inventory-units/{id} | Delete inventory unit by ID
 *InventoryUnitApi* | [**getInventoryUnitByID**](docs/Api/InventoryUnitApi.md#getinventoryunitbyid) | **GET** /inventory-units/{id} | Find inventory unit by ID
-*InventoryUnitApi* | [**updateInventoryUnit**](docs/Api/InventoryUnitApi.md#updateinventoryunit) | **PUT** /inventory-units/{id} | Update inventory unit
+*InventoryUnitApi* | [**updateInventoryUnit**](docs/Api/InventoryUnitApi.md#updateinventoryunit) | **PATCH** /inventory-units/{id} | Update inventory unit
 *OrderApi* | [**cancelOrder**](docs/Api/OrderApi.md#cancelorder) | **POST** /orders/{id}/cancel | Cancel whole order
 *OrderApi* | [**confirmOrder**](docs/Api/OrderApi.md#confirmorder) | **POST** /orders/{id}/confirm | Confirm order
 *OrderApi* | [**getOrderByID**](docs/Api/OrderApi.md#getorderbyid) | **GET** /orders/{id} | Find order by ID
@@ -102,18 +102,18 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [BadRequestErrorItemResponse](docs/Model/BadRequestErrorItemResponse.md)
  - [BadRequestResponse](docs/Model/BadRequestResponse.md)
  - [CancelOrderRequest](docs/Model/CancelOrderRequest.md)
  - [CancelOrderUnitRequest](docs/Model/CancelOrderUnitRequest.md)
  - [CreateInventoryUnitImportRequest](docs/Model/CreateInventoryUnitImportRequest.md)
- - [CreateInventoryUnitRequest](docs/Model/CreateInventoryUnitRequest.md)
  - [CreateInventoryUnitResponse](docs/Model/CreateInventoryUnitResponse.md)
  - [GetInventoryByIDResponse](docs/Model/GetInventoryByIDResponse.md)
  - [GetInventoryUnitsByInventoryIDResponse](docs/Model/GetInventoryUnitsByInventoryIDResponse.md)
  - [GetOrderByIDResponse](docs/Model/GetOrderByIDResponse.md)
  - [SendOrderUnitRequest](docs/Model/SendOrderUnitRequest.md)
+ - [UpdateInventoryUnitRequest](docs/Model/UpdateInventoryUnitRequest.md)
  - [User](docs/Model/User.md)
+ - [CreateInventoryUnitRequest](docs/Model/CreateInventoryUnitRequest.md)
 
 
 ## Documentation For Authorization

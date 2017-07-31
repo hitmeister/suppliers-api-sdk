@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**item_id** | **string** | Item ID | 
+**item_id** | **int** | Item ID | 
 **condition** | **string** | Unit condition | [optional] 
 **ean** | **string** | EAN | 
 **price** | **float** | Unit Price | 

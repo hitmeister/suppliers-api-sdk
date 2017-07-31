@@ -11,7 +11,7 @@
  */
 
 /**
- * SMS API
+ * Supplier API SDK
  *
  * This documentation describes SMS API. To use this API you should have an api-key and api-username
  *
@@ -54,7 +54,7 @@ class CreateInventoryUnitRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'item_id' => 'string',
+        'item_id' => 'int',
         'condition' => 'string',
         'ean' => 'string',
         'price' => 'float',
@@ -67,9 +67,32 @@ class CreateInventoryUnitRequest implements ArrayAccess
         'is_hauler_delivery' => 'bool'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'item_id' => 'int64',
+        'condition' => null,
+        'ean' => null,
+        'price' => 'float',
+        'quantity' => 'int64',
+        'supplier_item_id' => null,
+        'minimal_order_volume' => 'int64',
+        'shipping_cost' => 'float',
+        'delivery_min_time' => 'int64',
+        'delivery_max_time' => 'int64',
+        'is_hauler_delivery' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -143,7 +166,7 @@ class CreateInventoryUnitRequest implements ArrayAccess
         return self::$getters;
     }
 
-    const CONDITION_NEW = 'new';
+    const CONDITION__NEW = 'new';
     const CONDITION_AS_NEW = 'as_new';
     const CONDITION_VERY_GOOD = 'very_good';
     const CONDITION_GOOD = 'good';
@@ -158,7 +181,7 @@ class CreateInventoryUnitRequest implements ArrayAccess
     public function getConditionAllowableValues()
     {
         return [
-            self::CONDITION_NEW,
+            self::CONDITION__NEW,
             self::CONDITION_AS_NEW,
             self::CONDITION_VERY_GOOD,
             self::CONDITION_GOOD,
@@ -201,32 +224,14 @@ class CreateInventoryUnitRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['item_id'] === null) {
-            $invalid_properties[] = "'item_id' can't be null";
-        }
-        $allowed_values = ["new", "as_new", "very_good", "good", "acceptable"];
+        $allowed_values = $this->getConditionAllowableValues();
         if (!in_array($this->container['condition'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'condition', must be one of 'new', 'as_new', 'very_good', 'good', 'acceptable'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'condition', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
-        if ($this->container['ean'] === null) {
-            $invalid_properties[] = "'ean' can't be null";
-        }
-        if ($this->container['price'] === null) {
-            $invalid_properties[] = "'price' can't be null";
-        }
-        if ($this->container['quantity'] === null) {
-            $invalid_properties[] = "'quantity' can't be null";
-        }
-        if ($this->container['shipping_cost'] === null) {
-            $invalid_properties[] = "'shipping_cost' can't be null";
-        }
-        if ($this->container['delivery_min_time'] === null) {
-            $invalid_properties[] = "'delivery_min_time' can't be null";
-        }
-        if ($this->container['delivery_max_time'] === null) {
-            $invalid_properties[] = "'delivery_max_time' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -239,29 +244,8 @@ class CreateInventoryUnitRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['item_id'] === null) {
-            return false;
-        }
-        $allowed_values = ["new", "as_new", "very_good", "good", "acceptable"];
+        $allowed_values = $this->getConditionAllowableValues();
         if (!in_array($this->container['condition'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['ean'] === null) {
-            return false;
-        }
-        if ($this->container['price'] === null) {
-            return false;
-        }
-        if ($this->container['quantity'] === null) {
-            return false;
-        }
-        if ($this->container['shipping_cost'] === null) {
-            return false;
-        }
-        if ($this->container['delivery_min_time'] === null) {
-            return false;
-        }
-        if ($this->container['delivery_max_time'] === null) {
             return false;
         }
         return true;
@@ -270,7 +254,7 @@ class CreateInventoryUnitRequest implements ArrayAccess
 
     /**
      * Gets item_id
-     * @return string
+     * @return int
      */
     public function getItemId()
     {
@@ -279,7 +263,7 @@ class CreateInventoryUnitRequest implements ArrayAccess
 
     /**
      * Sets item_id
-     * @param string $item_id Item ID
+     * @param int $item_id Item ID
      * @return $this
      */
     public function setItemId($item_id)
@@ -305,9 +289,14 @@ class CreateInventoryUnitRequest implements ArrayAccess
      */
     public function setCondition($condition)
     {
-        $allowed_values = array('new', 'as_new', 'very_good', 'good', 'acceptable');
-        if (!is_null($condition) && (!in_array($condition, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'condition', must be one of 'new', 'as_new', 'very_good', 'good', 'acceptable'");
+        $allowed_values = $this->getConditionAllowableValues();
+        if (!is_null($condition) && !in_array($condition, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'condition', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['condition'] = $condition;
 

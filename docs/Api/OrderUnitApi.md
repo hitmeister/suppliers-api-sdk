@@ -46,7 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order unit to cancel |
- **body** | [**\Suppliers\Api\Model\CancelOrderUnitRequest**](../Model/\Suppliers\Api\Model\CancelOrderUnitRequest.md)| Order unit that should be cancelled |
+ **body** | [**\Suppliers\Api\Model\CancelOrderUnitRequest**](../Model/CancelOrderUnitRequest.md)| Order unit that should be cancelled |
 
 ### Return type
 
@@ -58,7 +58,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -101,7 +101,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order unit to mark as sent |
- **body** | [**\Suppliers\Api\Model\SendOrderUnitRequest**](../Model/\Suppliers\Api\Model\SendOrderUnitRequest.md)| Order unit that should be marked as sent |
+ **body** | [**\Suppliers\Api\Model\SendOrderUnitRequest**](../Model/SendOrderUnitRequest.md)| Order unit that should be marked as sent |
 
 ### Return type
 
@@ -113,7 +113,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

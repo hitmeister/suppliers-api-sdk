@@ -11,7 +11,7 @@
  */
 
 /**
- * SMS API
+ * Supplier API SDK
  *
  * This documentation describes SMS API. To use this API you should have an api-key and api-username
  *
@@ -57,13 +57,30 @@ class GetInventoryByIDResponse implements ArrayAccess
         'id' => 'int',
         'name' => 'string',
         'gln' => 'string',
-        'delivery_note_required' => 'string',
+        'delivery_note_required' => 'bool',
         'manager' => '\Suppliers\Api\Model\User'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => 'int64',
+        'name' => null,
+        'gln' => null,
+        'delivery_note_required' => null,
+        'manager' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -250,7 +267,7 @@ class GetInventoryByIDResponse implements ArrayAccess
 
     /**
      * Gets delivery_note_required
-     * @return string
+     * @return bool
      */
     public function getDeliveryNoteRequired()
     {
@@ -259,7 +276,7 @@ class GetInventoryByIDResponse implements ArrayAccess
 
     /**
      * Sets delivery_note_required
-     * @param string $delivery_note_required Tells if delivery_note field must be specified in /order-units/mark-as-sent request
+     * @param bool $delivery_note_required Tells if delivery_note field must be specified in /order-units/mark-as-sent request
      * @return $this
      */
     public function setDeliveryNoteRequired($delivery_note_required)

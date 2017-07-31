@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id_order_unit** | **int** |  | 
 **carrier** | **string** |  | 
 **tracking_number** | **string** |  | [optional] 
 **delivery_note** | **string** |  | [optional] 

@@ -49,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of inventory |
- **body** | [**\Suppliers\Api\Model\CreateInventoryUnitRequest**](../Model/\Suppliers\Api\Model\CreateInventoryUnitRequest.md)| Inventory unit object that needs to be added to the inventory |
+ **body** | [**\Suppliers\Api\Model\CreateInventoryUnitRequest**](../Model/CreateInventoryUnitRequest.md)| Inventory unit object that needs to be added to the inventory |
 
 ### Return type
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -104,7 +104,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of inventory |
- **body** | [**\Suppliers\Api\Model\CreateInventoryUnitImportRequest**](../Model/\Suppliers\Api\Model\CreateInventoryUnitImportRequest.md)| Inventory import request which stores all the necessary info |
+ **body** | [**\Suppliers\Api\Model\CreateInventoryUnitImportRequest**](../Model/CreateInventoryUnitImportRequest.md)| Inventory import request which stores all the necessary info |
 
 ### Return type
 
@@ -116,7 +116,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
