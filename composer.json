@@ -35,10 +35,10 @@
         "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
-        "psr-4": { "Suppliers\\Api\\" : "lib/" }
+        "psr-4": { "SMS\\Suppliers\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Suppliers\\Api\\" : "test/" }
+        "psr-4": { "SMS\\Suppliers\\" : "test/" }
     },
     "scripts": {
         "test": "phpunit",
