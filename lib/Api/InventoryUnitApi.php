@@ -182,7 +182,7 @@ class InventoryUnitApi
      *
      * @param string $id ID of inventory unit to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return \SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse
+     * @return \SMS\Suppliers\Model\GetInventoryUnitResponse
      */
     public function getInventoryUnit($id)
     {
@@ -197,7 +197,7 @@ class InventoryUnitApi
      *
      * @param string $id ID of inventory unit to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of \SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SMS\Suppliers\Model\GetInventoryUnitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInventoryUnitWithHttpInfo($id)
     {
@@ -250,15 +250,15 @@ class InventoryUnitApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse',
+                '\SMS\Suppliers\Model\GetInventoryUnitResponse',
                 '/inventory-units/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetInventoryUnitResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetInventoryUnitResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -33,7 +33,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 
 $api_instance = new SMS\Suppliers\Api\InventoryApi();
 $id = "id_example"; // string | ID of inventory
-$body = new \SMS\Suppliers\Model\CreateInventoryUnitImportRequest(); // \SMS\Suppliers\Model\CreateInventoryUnitImportRequest | Inventory import request which stores all the necessary info
+$body = new \SMS\Suppliers\Model\CreateImportRequest(); // \SMS\Suppliers\Model\CreateImportRequest | Inventory import request which stores all the necessary info
 
 try {
     $api_instance->createImportRequest($id, $body);
@@ -48,7 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of inventory |
- **body** | [**\SMS\Suppliers\Model\CreateInventoryUnitImportRequest**](../Model/CreateInventoryUnitImportRequest.md)| Inventory import request which stores all the necessary info |
+ **body** | [**\SMS\Suppliers\Model\CreateImportRequest**](../Model/CreateImportRequest.md)| Inventory import request which stores all the necessary info |
 
 ### Return type
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInventory**
-> \SMS\Suppliers\Model\GetInventoryByIDResponse getInventory($id)
+> \SMS\Suppliers\Model\GetInventoryResponse getInventory($id)
 
 Find inventory by ID
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SMS\Suppliers\Model\GetInventoryByIDResponse**](../Model/GetInventoryByIDResponse.md)
+[**\SMS\Suppliers\Model\GetInventoryResponse**](../Model/GetInventoryResponse.md)
 
 ### Authorization
 

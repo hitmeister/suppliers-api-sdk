@@ -46,7 +46,7 @@ To run the unit tests:
 
 ```
 composer install
-composer test
+./vendor/bin/phpunit
 ```
 
 ## Getting Started
@@ -68,7 +68,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 
 $api_instance = new SMS\Suppliers\Api\InventoryApi();
 $id = "id_example"; // string | ID of inventory
-$body = new \SMS\Suppliers\Model\CreateInventoryUnitImportRequest(); // \SMS\Suppliers\Model\CreateInventoryUnitImportRequest | Inventory import request which stores all the necessary info
+$body = new \SMS\Suppliers\Model\CreateImportRequest(); // \SMS\Suppliers\Model\CreateImportRequest | Inventory import request which stores all the necessary info
 
 try {
     $api_instance->createImportRequest($id, $body);
@@ -104,11 +104,11 @@ Class | Method | HTTP request | Description
  - [BadRequestResponse](docs/Model/BadRequestResponse.md)
  - [CancelOrderRequest](docs/Model/CancelOrderRequest.md)
  - [CancelOrderUnitRequest](docs/Model/CancelOrderUnitRequest.md)
- - [CreateInventoryUnitImportRequest](docs/Model/CreateInventoryUnitImportRequest.md)
+ - [CreateImportRequest](docs/Model/CreateImportRequest.md)
  - [CreateInventoryUnitResponse](docs/Model/CreateInventoryUnitResponse.md)
- - [GetInventoryByIDResponse](docs/Model/GetInventoryByIDResponse.md)
- - [GetInventoryUnitsByInventoryIDResponse](docs/Model/GetInventoryUnitsByInventoryIDResponse.md)
- - [GetOrderByIDResponse](docs/Model/GetOrderByIDResponse.md)
+ - [GetInventoryResponse](docs/Model/GetInventoryResponse.md)
+ - [GetInventoryUnitResponse](docs/Model/GetInventoryUnitResponse.md)
+ - [GetOrderResponse](docs/Model/GetOrderResponse.md)
  - [SendOrderUnitRequest](docs/Model/SendOrderUnitRequest.md)
  - [UpdateInventoryUnitRequest](docs/Model/UpdateInventoryUnitRequest.md)
  - [User](docs/Model/User.md)

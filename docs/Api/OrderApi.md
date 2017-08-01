@@ -118,7 +118,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrder**
-> \SMS\Suppliers\Model\GetOrderByIDResponse getOrder($id)
+> \SMS\Suppliers\Model\GetOrderResponse getOrder($id)
 
 Find order by ID
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SMS\Suppliers\Model\GetOrderByIDResponse**](../Model/GetOrderByIDResponse.md)
+[**\SMS\Suppliers\Model\GetOrderResponse**](../Model/GetOrderResponse.md)
 
 ### Authorization
 

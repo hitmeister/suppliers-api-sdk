@@ -285,7 +285,7 @@ class OrderApi
      *
      * @param string $id ID of order to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return \SMS\Suppliers\Model\GetOrderByIDResponse
+     * @return \SMS\Suppliers\Model\GetOrderResponse
      */
     public function getOrder($id)
     {
@@ -300,7 +300,7 @@ class OrderApi
      *
      * @param string $id ID of order to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of \SMS\Suppliers\Model\GetOrderByIDResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SMS\Suppliers\Model\GetOrderResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrderWithHttpInfo($id)
     {
@@ -353,15 +353,15 @@ class OrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\SMS\Suppliers\Model\GetOrderByIDResponse',
+                '\SMS\Suppliers\Model\GetOrderResponse',
                 '/orders/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetOrderByIDResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetOrderResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetOrderByIDResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetOrderResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

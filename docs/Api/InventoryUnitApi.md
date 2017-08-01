@@ -63,7 +63,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInventoryUnit**
-> \SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse getInventoryUnit($id)
+> \SMS\Suppliers\Model\GetInventoryUnitResponse getInventoryUnit($id)
 
 Find inventory unit by ID
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse**](../Model/GetInventoryUnitsByInventoryIDResponse.md)
+[**\SMS\Suppliers\Model\GetInventoryUnitResponse**](../Model/GetInventoryUnitResponse.md)
 
 ### Authorization
 

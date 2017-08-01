@@ -93,7 +93,7 @@ class InventoryApi
      * Create new inventory import
      *
      * @param string $id ID of inventory (required)
-     * @param \SMS\Suppliers\Model\CreateInventoryUnitImportRequest $body Inventory import request which stores all the necessary info (required)
+     * @param \SMS\Suppliers\Model\CreateImportRequest $body Inventory import request which stores all the necessary info (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return void
      */
@@ -109,7 +109,7 @@ class InventoryApi
      * Create new inventory import
      *
      * @param string $id ID of inventory (required)
-     * @param \SMS\Suppliers\Model\CreateInventoryUnitImportRequest $body Inventory import request which stores all the necessary info (required)
+     * @param \SMS\Suppliers\Model\CreateImportRequest $body Inventory import request which stores all the necessary info (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -304,7 +304,7 @@ class InventoryApi
      *
      * @param string $id ID of inventory to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return \SMS\Suppliers\Model\GetInventoryByIDResponse
+     * @return \SMS\Suppliers\Model\GetInventoryResponse
      */
     public function getInventory($id)
     {
@@ -319,7 +319,7 @@ class InventoryApi
      *
      * @param string $id ID of inventory to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of \SMS\Suppliers\Model\GetInventoryByIDResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SMS\Suppliers\Model\GetInventoryResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInventoryWithHttpInfo($id)
     {
@@ -372,15 +372,15 @@ class InventoryApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\SMS\Suppliers\Model\GetInventoryByIDResponse',
+                '\SMS\Suppliers\Model\GetInventoryResponse',
                 '/inventories/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetInventoryByIDResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetInventoryResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetInventoryByIDResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetInventoryResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
