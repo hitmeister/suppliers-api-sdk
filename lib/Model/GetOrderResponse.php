@@ -54,7 +54,7 @@ class GetOrderResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string'
+        'id_order' => 'string'
     ];
 
     /**
@@ -62,7 +62,7 @@ class GetOrderResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null
+        'id_order' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class GetOrderResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id'
+        'id_order' => 'id_order'
     ];
 
 
@@ -89,7 +89,7 @@ class GetOrderResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId'
+        'id_order' => 'setIdOrder'
     ];
 
 
@@ -98,7 +98,7 @@ class GetOrderResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId'
+        'id_order' => 'getIdOrder'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class GetOrderResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['id_order'] = isset($data['id_order']) ? $data['id_order'] : null;
     }
 
     /**
@@ -161,22 +161,22 @@ class GetOrderResponse implements ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets id_order
      * @return string
      */
-    public function getId()
+    public function getIdOrder()
     {
-        return $this->container['id'];
+        return $this->container['id_order'];
     }
 
     /**
-     * Sets id
-     * @param string $id
+     * Sets id_order
+     * @param string $id_order
      * @return $this
      */
-    public function setId($id)
+    public function setIdOrder($id_order)
     {
-        $this->container['id'] = $id;
+        $this->container['id_order'] = $id_order;
 
         return $this;
     }
