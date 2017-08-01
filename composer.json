@@ -14,11 +14,11 @@
     "authors": [
         {
             "name": "real.digital",
-            "email": "devops@hitmeister.de"
+            "email": "sms.tech@real-digital.de"
         }
     ],
     "support": {
-        "email": "devops@hitmeister.de",
+        "email": "sms.tech@real-digital.de",
         "source": "https://github.com/hitmeister/suppliers-api-sdk",
         "issues": "https://github.com/hitmeister/suppliers-api-sdk/issues"
     },
