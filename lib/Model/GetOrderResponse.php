@@ -54,7 +54,7 @@ class GetOrderResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int'
+        'id' => 'string'
     ];
 
     /**
@@ -62,7 +62,7 @@ class GetOrderResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => 'int64'
+        'id' => null
     ];
 
     public static function swaggerTypes()
@@ -162,7 +162,7 @@ class GetOrderResponse implements ArrayAccess
 
     /**
      * Gets id
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -171,7 +171,7 @@ class GetOrderResponse implements ArrayAccess
 
     /**
      * Sets id
-     * @param int $id
+     * @param string $id
      * @return $this
      */
     public function setId($id)
