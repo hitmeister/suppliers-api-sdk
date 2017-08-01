@@ -1,6 +1,6 @@
 <?php
 /**
- * GetInventoryUnitsByInventoryIDResponse
+ * GetInventoryUnitResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * GetInventoryUnitsByInventoryIDResponse Class Doc Comment
+ * GetInventoryUnitResponse Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetInventoryUnitsByInventoryIDResponse implements ArrayAccess
+class GetInventoryUnitResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class GetInventoryUnitsByInventoryIDResponse implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'GetInventoryUnitsByInventoryIDResponse';
+    protected static $swaggerModelName = 'GetInventoryUnitResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

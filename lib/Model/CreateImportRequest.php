@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateInventoryUnitImportRequest
+ * CreateImportRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * CreateInventoryUnitImportRequest Class Doc Comment
+ * CreateImportRequest Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateInventoryUnitImportRequest implements ArrayAccess
+class CreateImportRequest implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class CreateInventoryUnitImportRequest implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreateInventoryUnitImportRequest';
+    protected static $swaggerModelName = 'CreateImportRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

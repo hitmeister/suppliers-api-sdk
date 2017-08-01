@@ -1,4 +1,4 @@
-# GetInventoryUnitsByInventoryIDResponse
+# GetInventoryUnitResponse
 
 ## Properties
 Name | Type | Description | Notes

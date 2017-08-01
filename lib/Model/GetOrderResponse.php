@@ -1,6 +1,6 @@
 <?php
 /**
- * GetOrderByIDResponse
+ * GetOrderResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * GetOrderByIDResponse Class Doc Comment
+ * GetOrderResponse Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetOrderByIDResponse implements ArrayAccess
+class GetOrderResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class GetOrderByIDResponse implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'GetOrderByIDResponse';
+    protected static $swaggerModelName = 'GetOrderResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
