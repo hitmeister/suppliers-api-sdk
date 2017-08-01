@@ -1,4 +1,4 @@
-# Suppliers\Api\OrderApi
+# SMS\Suppliers\OrderApi
 
 All URIs are relative to *https://localhost/api/v1/supplier*
 
@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelOrder**](OrderApi.md#cancelOrder) | **POST** /orders/{id}/cancel | Cancel whole order
 [**confirmOrder**](OrderApi.md#confirmOrder) | **POST** /orders/{id}/confirm | Confirm order
-[**getOrderByID**](OrderApi.md#getOrderByID) | **GET** /orders/{id} | Find order by ID
+[**getOrder**](OrderApi.md#getOrder) | **GET** /orders/{id} | Find order by ID
 
 
 # **cancelOrder**
@@ -22,17 +22,17 @@ Cancels all order units
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\OrderApi();
+$api_instance = new SMS\Suppliers\Api\OrderApi();
 $id = "id_example"; // string | ID of order to cancel
-$body = new \Suppliers\Api\Model\CancelOrderRequest(); // \Suppliers\Api\Model\CancelOrderRequest | Pet object that needs to be added to the store
+$body = new \SMS\Suppliers\Model\CancelOrderRequest(); // \SMS\Suppliers\Model\CancelOrderRequest | Pet object that needs to be added to the store
 
 try {
     $api_instance->cancelOrder($id, $body);
@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order to cancel |
- **body** | [**\Suppliers\Api\Model\CancelOrderRequest**](../Model/CancelOrderRequest.md)| Pet object that needs to be added to the store |
+ **body** | [**\SMS\Suppliers\Model\CancelOrderRequest**](../Model/CancelOrderRequest.md)| Pet object that needs to be added to the store |
 
 ### Return type
 
@@ -77,15 +77,15 @@ Confirm that order has been received by a supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\OrderApi();
+$api_instance = new SMS\Suppliers\Api\OrderApi();
 $id = "id_example"; // string | ID of order to confirm
 
 try {
@@ -117,8 +117,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getOrderByID**
-> \Suppliers\Api\Model\GetOrderByIDResponse getOrderByID($id)
+# **getOrder**
+> \SMS\Suppliers\Model\GetOrderByIDResponse getOrder($id)
 
 Find order by ID
 
@@ -130,22 +130,22 @@ Returns a single order
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\OrderApi();
+$api_instance = new SMS\Suppliers\Api\OrderApi();
 $id = "id_example"; // string | ID of order to return
 
 try {
-    $result = $api_instance->getOrderByID($id);
+    $result = $api_instance->getOrder($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->getOrderByID: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getOrder: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Suppliers\Api\Model\GetOrderByIDResponse**](../Model/GetOrderByIDResponse.md)
+[**\SMS\Suppliers\Model\GetOrderByIDResponse**](../Model/GetOrderByIDResponse.md)
 
 ### Authorization
 

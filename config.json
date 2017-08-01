@@ -1,5 +1,5 @@
 {
-  "invokerPackage" : "Suppliers\\Api",
+  "invokerPackage": "SMS\\Suppliers",
   "packagePath": "",
   "composerVendorName" : "hitmeister",
   "gitUserId" : "hitmeister",

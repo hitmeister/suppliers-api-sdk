@@ -1,16 +1,16 @@
-# Suppliers\Api\InventoryUnitApi
+# SMS\Suppliers\InventoryUnitApi
 
 All URIs are relative to *https://localhost/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteInventoryUnitByID**](InventoryUnitApi.md#deleteInventoryUnitByID) | **DELETE** /inventory-units/{id} | Delete inventory unit by ID
-[**getInventoryUnitByID**](InventoryUnitApi.md#getInventoryUnitByID) | **GET** /inventory-units/{id} | Find inventory unit by ID
+[**deleteInventoryUnit**](InventoryUnitApi.md#deleteInventoryUnit) | **DELETE** /inventory-units/{id} | Delete inventory unit by ID
+[**getInventoryUnit**](InventoryUnitApi.md#getInventoryUnit) | **GET** /inventory-units/{id} | Find inventory unit by ID
 [**updateInventoryUnit**](InventoryUnitApi.md#updateInventoryUnit) | **PATCH** /inventory-units/{id} | Update inventory unit
 
 
-# **deleteInventoryUnitByID**
-> deleteInventoryUnitByID($id)
+# **deleteInventoryUnit**
+> deleteInventoryUnit($id)
 
 Delete inventory unit by ID
 
@@ -22,21 +22,21 @@ Deletes a single inventory unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\InventoryUnitApi();
+$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
 $id = "id_example"; // string | ID of inventory unit to delete
 
 try {
-    $api_instance->deleteInventoryUnitByID($id);
+    $api_instance->deleteInventoryUnit($id);
 } catch (Exception $e) {
-    echo 'Exception when calling InventoryUnitApi->deleteInventoryUnitByID: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling InventoryUnitApi->deleteInventoryUnit: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -62,8 +62,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getInventoryUnitByID**
-> \Suppliers\Api\Model\GetInventoryUnitsByInventoryIDResponse getInventoryUnitByID($id)
+# **getInventoryUnit**
+> \SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse getInventoryUnit($id)
 
 Find inventory unit by ID
 
@@ -75,22 +75,22 @@ Returns a single inventory unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\InventoryUnitApi();
+$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
 $id = "id_example"; // string | ID of inventory unit to return
 
 try {
-    $result = $api_instance->getInventoryUnitByID($id);
+    $result = $api_instance->getInventoryUnit($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling InventoryUnitApi->getInventoryUnitByID: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling InventoryUnitApi->getInventoryUnit: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Suppliers\Api\Model\GetInventoryUnitsByInventoryIDResponse**](../Model/GetInventoryUnitsByInventoryIDResponse.md)
+[**\SMS\Suppliers\Model\GetInventoryUnitsByInventoryIDResponse**](../Model/GetInventoryUnitsByInventoryIDResponse.md)
 
 ### Authorization
 
@@ -129,17 +129,17 @@ Update inventory unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\InventoryUnitApi();
+$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
 $id = "id_example"; // string | ID of inventory
-$body = new \Suppliers\Api\Model\UpdateInventoryUnitRequest(); // \Suppliers\Api\Model\UpdateInventoryUnitRequest | Inventory unit object that needs to be updated
+$body = new \SMS\Suppliers\Model\UpdateInventoryUnitRequest(); // \SMS\Suppliers\Model\UpdateInventoryUnitRequest | Inventory unit object that needs to be updated
 
 try {
     $api_instance->updateInventoryUnit($id, $body);
@@ -154,7 +154,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of inventory |
- **body** | [**\Suppliers\Api\Model\UpdateInventoryUnitRequest**](../Model/UpdateInventoryUnitRequest.md)| Inventory unit object that needs to be updated | [optional]
+ **body** | [**\SMS\Suppliers\Model\UpdateInventoryUnitRequest**](../Model/UpdateInventoryUnitRequest.md)| Inventory unit object that needs to be updated | [optional]
 
 ### Return type
 

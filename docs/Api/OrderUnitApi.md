@@ -1,4 +1,4 @@
-# Suppliers\Api\OrderUnitApi
+# SMS\Suppliers\OrderUnitApi
 
 All URIs are relative to *https://localhost/api/v1/supplier*
 
@@ -21,17 +21,17 @@ Cancel an order unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\OrderUnitApi();
+$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
 $id = "id_example"; // string | ID of order unit to cancel
-$body = new \Suppliers\Api\Model\CancelOrderUnitRequest(); // \Suppliers\Api\Model\CancelOrderUnitRequest | Order unit that should be cancelled
+$body = new \SMS\Suppliers\Model\CancelOrderUnitRequest(); // \SMS\Suppliers\Model\CancelOrderUnitRequest | Order unit that should be cancelled
 
 try {
     $api_instance->cancelOrderUnit($id, $body);
@@ -46,7 +46,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order unit to cancel |
- **body** | [**\Suppliers\Api\Model\CancelOrderUnitRequest**](../Model/CancelOrderUnitRequest.md)| Order unit that should be cancelled |
+ **body** | [**\SMS\Suppliers\Model\CancelOrderUnitRequest**](../Model/CancelOrderUnitRequest.md)| Order unit that should be cancelled |
 
 ### Return type
 
@@ -76,17 +76,17 @@ Confirm that an order unit has already been sent by a supplier
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Suppliers\Api\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
-$api_instance = new Suppliers\Api\Api\OrderUnitApi();
+$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
 $id = "id_example"; // string | ID of order unit to mark as sent
-$body = new \Suppliers\Api\Model\SendOrderUnitRequest(); // \Suppliers\Api\Model\SendOrderUnitRequest | Order unit that should be marked as sent
+$body = new \SMS\Suppliers\Model\SendOrderUnitRequest(); // \SMS\Suppliers\Model\SendOrderUnitRequest | Order unit that should be marked as sent
 
 try {
     $api_instance->sendOrderUnit($id, $body);
@@ -101,7 +101,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order unit to mark as sent |
- **body** | [**\Suppliers\Api\Model\SendOrderUnitRequest**](../Model/SendOrderUnitRequest.md)| Order unit that should be marked as sent |
+ **body** | [**\SMS\Suppliers\Model\SendOrderUnitRequest**](../Model/SendOrderUnitRequest.md)| Order unit that should be marked as sent |
 
 ### Return type
 
