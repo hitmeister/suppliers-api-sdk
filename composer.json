@@ -1,15 +1,15 @@
 {
     "name": "hitmeister/suppliers-api-sdk",
     "version": "1.0.0",
-    "description": "",
+    "description": "Suppliers API SDK",
     "keywords": [
         "swagger",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
-    "license": "proprietary",
+    "homepage": "https://sms.real.de",
+    "license": "MIT",
     "authors": [
         {
             "name": "Swagger and contributors",
