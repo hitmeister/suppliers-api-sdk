@@ -81,7 +81,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost/api/v1/supplier*
+All URIs are relative to *http://sms.real.de/api/v1/supplier*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
