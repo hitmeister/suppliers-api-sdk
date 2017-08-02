@@ -1,27 +1,21 @@
 {
     "name": "hitmeister/suppliers-api-sdk",
-    "version": "0.0.1",
-    "description": "Suppliers API SDK",
+    "version": "1.0.0",
+    "description": "",
     "keywords": [
-        "real.digital",
-        "hitmeister",
+        "swagger",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "https://sms.real.de/api/docs",
-    "license": "Apache-2.0",
+    "homepage": "http://swagger.io",
+    "license": "proprietary",
     "authors": [
         {
-            "name": "real.digital",
-            "email": "sms.tech@real-digital.de"
+            "name": "Swagger and contributors",
+            "homepage": "https://github.com/swagger-api/swagger-codegen"
         }
     ],
-    "support": {
-        "email": "sms.tech@real-digital.de",
-        "source": "https://github.com/hitmeister/suppliers-api-sdk",
-        "issues": "https://github.com/hitmeister/suppliers-api-sdk/issues"
-    },
     "require": {
         "php": ">=5.4",
         "ext-curl": "*",
@@ -29,7 +23,7 @@
         "ext-mbstring": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.*",
+        "phpunit/phpunit": "~4.8",
         "satooshi/php-coveralls": "~1.0",
         "squizlabs/php_codesniffer": "~2.6",
         "friendsofphp/php-cs-fixer": "~1.12"
