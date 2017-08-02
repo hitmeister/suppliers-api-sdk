@@ -1,6 +1,6 @@
 {
   "invokerPackage": "SMS\\Suppliers",
-  "packagePath": "",
+  "packagePath": "suppliers-api-sdk",
   "composerVendorName" : "hitmeister",
   "gitUserId" : "hitmeister",
   "composerProjectName" : "suppliers-api-sdk",
