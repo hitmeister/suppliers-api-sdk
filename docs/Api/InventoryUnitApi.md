@@ -1,6 +1,6 @@
 # SMS\Suppliers\InventoryUnitApi
 
-All URIs are relative to *http://sms.real.de/api/v1/supplier*
+All URIs are relative to *https://sms.real.de/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
