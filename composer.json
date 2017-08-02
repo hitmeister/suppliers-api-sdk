@@ -39,11 +39,5 @@
     },
     "autoload-dev": {
         "psr-4": { "SMS\\Suppliers\\" : "test/" }
-    },
-    "scripts": {
-        "test": "phpunit",
-        "generate-api-client": [
-            "java -jar ./tools/codegen.jar generate -l php -c config.json -o ./ -i $SWAGGER_URL"
-        ]
     }
 }
