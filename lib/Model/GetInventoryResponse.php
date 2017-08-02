@@ -177,6 +177,12 @@ class GetInventoryResponse implements ArrayAccess
         if ($this->container['gln'] === null) {
             $invalid_properties[] = "'gln' can't be null";
         }
+        if ($this->container['delivery_note_required'] === null) {
+            $invalid_properties[] = "'delivery_note_required' can't be null";
+        }
+        if ($this->container['manager'] === null) {
+            $invalid_properties[] = "'manager' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -196,6 +202,12 @@ class GetInventoryResponse implements ArrayAccess
             return false;
         }
         if ($this->container['gln'] === null) {
+            return false;
+        }
+        if ($this->container['delivery_note_required'] === null) {
+            return false;
+        }
+        if ($this->container['manager'] === null) {
             return false;
         }
         return true;

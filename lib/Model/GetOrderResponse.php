@@ -144,6 +144,9 @@ class GetOrderResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id_order'] === null) {
+            $invalid_properties[] = "'id_order' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -156,6 +159,9 @@ class GetOrderResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id_order'] === null) {
+            return false;
+        }
         return true;
     }
 

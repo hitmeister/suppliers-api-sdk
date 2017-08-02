@@ -239,6 +239,9 @@ class GetInventoryUnitResponse implements ArrayAccess
         if ($this->container['item_id'] === null) {
             $invalid_properties[] = "'item_id' can't be null";
         }
+        if ($this->container['condition'] === null) {
+            $invalid_properties[] = "'condition' can't be null";
+        }
         $allowed_values = $this->getConditionAllowableValues();
         if (!in_array($this->container['condition'], $allowed_values)) {
             $invalid_properties[] = sprintf(
@@ -256,6 +259,18 @@ class GetInventoryUnitResponse implements ArrayAccess
         if ($this->container['quantity'] === null) {
             $invalid_properties[] = "'quantity' can't be null";
         }
+        if ($this->container['unit_id'] === null) {
+            $invalid_properties[] = "'unit_id' can't be null";
+        }
+        if ($this->container['inventory_id'] === null) {
+            $invalid_properties[] = "'inventory_id' can't be null";
+        }
+        if ($this->container['supplier_item_id'] === null) {
+            $invalid_properties[] = "'supplier_item_id' can't be null";
+        }
+        if ($this->container['minimal_order_volume'] === null) {
+            $invalid_properties[] = "'minimal_order_volume' can't be null";
+        }
         if ($this->container['shipping_cost'] === null) {
             $invalid_properties[] = "'shipping_cost' can't be null";
         }
@@ -264,6 +279,9 @@ class GetInventoryUnitResponse implements ArrayAccess
         }
         if ($this->container['delivery_max_time'] === null) {
             $invalid_properties[] = "'delivery_max_time' can't be null";
+        }
+        if ($this->container['is_hauler_delivery'] === null) {
+            $invalid_properties[] = "'is_hauler_delivery' can't be null";
         }
         return $invalid_properties;
     }
@@ -280,6 +298,9 @@ class GetInventoryUnitResponse implements ArrayAccess
         if ($this->container['item_id'] === null) {
             return false;
         }
+        if ($this->container['condition'] === null) {
+            return false;
+        }
         $allowed_values = $this->getConditionAllowableValues();
         if (!in_array($this->container['condition'], $allowed_values)) {
             return false;
@@ -293,6 +314,18 @@ class GetInventoryUnitResponse implements ArrayAccess
         if ($this->container['quantity'] === null) {
             return false;
         }
+        if ($this->container['unit_id'] === null) {
+            return false;
+        }
+        if ($this->container['inventory_id'] === null) {
+            return false;
+        }
+        if ($this->container['supplier_item_id'] === null) {
+            return false;
+        }
+        if ($this->container['minimal_order_volume'] === null) {
+            return false;
+        }
         if ($this->container['shipping_cost'] === null) {
             return false;
         }
@@ -300,6 +333,9 @@ class GetInventoryUnitResponse implements ArrayAccess
             return false;
         }
         if ($this->container['delivery_max_time'] === null) {
+            return false;
+        }
+        if ($this->container['is_hauler_delivery'] === null) {
             return false;
         }
         return true;
@@ -344,7 +380,7 @@ class GetInventoryUnitResponse implements ArrayAccess
     public function setCondition($condition)
     {
         $allowed_values = $this->getConditionAllowableValues();
-        if (!is_null($condition) && !in_array($condition, $allowed_values)) {
+        if (!in_array($condition, $allowed_values)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value for 'condition', must be one of '%s'",

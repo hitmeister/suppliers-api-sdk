@@ -157,6 +157,15 @@ class BadRequestResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['status'] === null) {
+            $invalid_properties[] = "'status' can't be null";
+        }
+        if ($this->container['message'] === null) {
+            $invalid_properties[] = "'message' can't be null";
+        }
+        if ($this->container['errors'] === null) {
+            $invalid_properties[] = "'errors' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -169,6 +178,15 @@ class BadRequestResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['status'] === null) {
+            return false;
+        }
+        if ($this->container['message'] === null) {
+            return false;
+        }
+        if ($this->container['errors'] === null) {
+            return false;
+        }
         return true;
     }
 

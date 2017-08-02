@@ -144,6 +144,9 @@ class CreateInventoryUnitResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -156,6 +159,9 @@ class CreateInventoryUnitResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
         return true;
     }
 
