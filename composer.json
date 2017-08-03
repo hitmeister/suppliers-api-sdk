@@ -21,7 +21,7 @@
         {
             "name": "Swagger and contributors",
             "homepage": "https://github.com/swagger-api/swagger-codegen"
-        },
+        }
     ],
     "require": {
         "php": ">=5.4",
