@@ -3,18 +3,25 @@
     "version": "0.1.0",
     "description": "Suppliers API SDK",
     "keywords": [
+        "real.digital",
+        "sms",
         "swagger",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "https://sms.real.de",
+    "homepage": "https://sms.real.de/api/docs",
     "license": "MIT",
     "authors": [
         {
+            "email": "sms.tech@real-digital.de",
+            "name": "real.digital",
+            "homepage": "https://github.com/hitmeister/suppliers-api-sdk"
+        },
+        {
             "name": "Swagger and contributors",
             "homepage": "https://github.com/swagger-api/swagger-codegen"
-        }
+        },
     ],
     "require": {
         "php": ">=5.4",
