@@ -109,7 +109,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'SMS-Suppliers-API-SDK/1.0.0';
+    protected $userAgent = 'SMS-Suppliers-API-SDK/0.1.0';
 
     /**
      * Debug switch (default set to false)
