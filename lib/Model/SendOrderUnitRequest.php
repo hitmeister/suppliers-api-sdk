@@ -56,7 +56,7 @@ class SendOrderUnitRequest implements ArrayAccess
     protected static $swaggerTypes = [
         'carrier' => 'string',
         'tracking_number' => 'string',
-        'delivery_note' => 'string'
+        'delivery_note_number' => 'string'
     ];
 
     /**
@@ -66,7 +66,7 @@ class SendOrderUnitRequest implements ArrayAccess
     protected static $swaggerFormats = [
         'carrier' => null,
         'tracking_number' => null,
-        'delivery_note' => null
+        'delivery_note_number' => null
     ];
 
     public static function swaggerTypes()
@@ -86,7 +86,7 @@ class SendOrderUnitRequest implements ArrayAccess
     protected static $attributeMap = [
         'carrier' => 'carrier',
         'tracking_number' => 'tracking_number',
-        'delivery_note' => 'delivery_note'
+        'delivery_note_number' => 'delivery_note_number'
     ];
 
 
@@ -97,7 +97,7 @@ class SendOrderUnitRequest implements ArrayAccess
     protected static $setters = [
         'carrier' => 'setCarrier',
         'tracking_number' => 'setTrackingNumber',
-        'delivery_note' => 'setDeliveryNote'
+        'delivery_note_number' => 'setDeliveryNoteNumber'
     ];
 
 
@@ -108,7 +108,7 @@ class SendOrderUnitRequest implements ArrayAccess
     protected static $getters = [
         'carrier' => 'getCarrier',
         'tracking_number' => 'getTrackingNumber',
-        'delivery_note' => 'getDeliveryNote'
+        'delivery_note_number' => 'getDeliveryNoteNumber'
     ];
 
     public static function attributeMap()
@@ -218,7 +218,7 @@ class SendOrderUnitRequest implements ArrayAccess
     {
         $this->container['carrier'] = isset($data['carrier']) ? $data['carrier'] : null;
         $this->container['tracking_number'] = isset($data['tracking_number']) ? $data['tracking_number'] : null;
-        $this->container['delivery_note'] = isset($data['delivery_note']) ? $data['delivery_note'] : null;
+        $this->container['delivery_note_number'] = isset($data['delivery_note_number']) ? $data['delivery_note_number'] : null;
     }
 
     /**
@@ -316,22 +316,22 @@ class SendOrderUnitRequest implements ArrayAccess
     }
 
     /**
-     * Gets delivery_note
+     * Gets delivery_note_number
      * @return string
      */
-    public function getDeliveryNote()
+    public function getDeliveryNoteNumber()
     {
-        return $this->container['delivery_note'];
+        return $this->container['delivery_note_number'];
     }
 
     /**
-     * Sets delivery_note
-     * @param string $delivery_note
+     * Sets delivery_note_number
+     * @param string $delivery_note_number
      * @return $this
      */
-    public function setDeliveryNote($delivery_note)
+    public function setDeliveryNoteNumber($delivery_note_number)
     {
-        $this->container['delivery_note'] = $delivery_note;
+        $this->container['delivery_note_number'] = $delivery_note_number;
 
         return $this;
     }
