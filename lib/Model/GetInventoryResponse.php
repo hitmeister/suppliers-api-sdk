@@ -288,7 +288,7 @@ class GetInventoryResponse implements ArrayAccess
 
     /**
      * Sets delivery_note_required
-     * @param bool $delivery_note_required Tells if delivery_note field must be specified in /order-units/mark-as-sent request
+     * @param bool $delivery_note_required Tells if delivery_note_number field must be specified in /order-units/mark-as-sent request
      * @return $this
      */
     public function setDeliveryNoteRequired($delivery_note_required)
