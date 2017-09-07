@@ -86,11 +86,11 @@ All URIs are relative to *https://sms.real.de/api/v1/supplier*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *InventoryApi* | [**createImportRequest**](docs/Api/InventoryApi.md#createimportrequest) | **POST** /inventories/{id}/import-requests | Create new inventory import
-*InventoryApi* | [**createInventoryUnit**](docs/Api/InventoryApi.md#createinventoryunit) | **POST** /inventories/{id}/units | Create new inventory unit
 *InventoryApi* | [**getInventory**](docs/Api/InventoryApi.md#getinventory) | **GET** /inventories/{id} | Find inventory by ID
-*InventoryApi* | [**getInventoryUnits**](docs/Api/InventoryApi.md#getinventoryunits) | **GET** /inventories/{id}/units | Find all inventory units by inventory ID
+*InventoryUnitApi* | [**createInventoryUnit**](docs/Api/InventoryUnitApi.md#createinventoryunit) | **POST** /inventory-units | Create new inventory unit
 *InventoryUnitApi* | [**deleteInventoryUnit**](docs/Api/InventoryUnitApi.md#deleteinventoryunit) | **DELETE** /inventory-units/{id} | Delete inventory unit by ID
 *InventoryUnitApi* | [**getInventoryUnit**](docs/Api/InventoryUnitApi.md#getinventoryunit) | **GET** /inventory-units/{id} | Find inventory unit by ID
+*InventoryUnitApi* | [**getInventoryUnits**](docs/Api/InventoryUnitApi.md#getinventoryunits) | **GET** /inventory-units | Find all inventory units
 *InventoryUnitApi* | [**updateInventoryUnit**](docs/Api/InventoryUnitApi.md#updateinventoryunit) | **PATCH** /inventory-units/{id} | Update inventory unit
 *OrderApi* | [**cancelOrder**](docs/Api/OrderApi.md#cancelorder) | **POST** /orders/{id}/cancel | Cancel whole order
 *OrderApi* | [**confirmOrder**](docs/Api/OrderApi.md#confirmorder) | **POST** /orders/{id}/confirm | Confirm order

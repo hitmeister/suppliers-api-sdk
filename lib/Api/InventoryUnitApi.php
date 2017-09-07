@@ -88,6 +88,99 @@ class InventoryUnitApi
     }
 
     /**
+     * Operation createInventoryUnit
+     *
+     * Create new inventory unit
+     *
+     * @param \SMS\Suppliers\Model\CreateInventoryUnitRequest $body Inventory unit object that needs to be added to the inventory (required)
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return \SMS\Suppliers\Model\CreateInventoryUnitResponse
+     */
+    public function createInventoryUnit($body)
+    {
+        list($response) = $this->createInventoryUnitWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation createInventoryUnitWithHttpInfo
+     *
+     * Create new inventory unit
+     *
+     * @param \SMS\Suppliers\Model\CreateInventoryUnitRequest $body Inventory unit object that needs to be added to the inventory (required)
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return array of \SMS\Suppliers\Model\CreateInventoryUnitResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createInventoryUnitWithHttpInfo($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createInventoryUnit');
+        }
+        // parse inputs
+        $resourcePath = "/inventory-units";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-username'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\SMS\Suppliers\Model\CreateInventoryUnitResponse',
+                '/inventory-units'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\CreateInventoryUnitResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\CreateInventoryUnitResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\BadRequestResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation deleteInventoryUnit
      *
      * Delete inventory unit by ID
@@ -261,6 +354,80 @@ class InventoryUnitApi
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetInventoryUnitResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getInventoryUnits
+     *
+     * Find all inventory units
+     *
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return void
+     */
+    public function getInventoryUnits()
+    {
+        list($response) = $this->getInventoryUnitsWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation getInventoryUnitsWithHttpInfo
+     *
+     * Find all inventory units
+     *
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getInventoryUnitsWithHttpInfo()
+    {
+        // parse inputs
+        $resourcePath = "/inventory-units";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-username'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/inventory-units'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
             }
 
             throw $e;
