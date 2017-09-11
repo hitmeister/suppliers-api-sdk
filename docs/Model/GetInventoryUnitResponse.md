@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **ean** | **string** | EAN | 
 **price** | **float** | Unit Price | 
 **quantity** | **int** | Unit Quantity | 
-**unit_id** | **int** | Inventory Unit ID | 
 **inventory_id** | **int** | Inventory ID | 
 **supplier_item_id** | **string** | Supplier Item ID | 
 **minimal_order_volume** | **int** | Minimal Order Volume | 
