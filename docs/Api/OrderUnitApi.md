@@ -1,10 +1,11 @@
 # SMS\Suppliers\OrderUnitApi
 
-All URIs are relative to *https://sms.real.de/api/v1/supplier*
+All URIs are relative to *https://localhost/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cancelOrderUnit**](OrderUnitApi.md#cancelOrderUnit) | **POST** /order-units/{id}/cancel | Cancel an order unit
+[**pickOrderUnit**](OrderUnitApi.md#pickOrderUnit) | **POST** /order-units/{id}/pick | Change order unit status to &#39;picking&#39;
 [**sendOrderUnit**](OrderUnitApi.md#sendOrderUnit) | **POST** /order-units/{id}/send | Send an order unit
 
 
@@ -47,6 +48,59 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order unit to cancel |
  **body** | [**\SMS\Suppliers\Model\CancelOrderUnitRequest**](../Model/CancelOrderUnitRequest.md)| Order unit that should be cancelled |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [apiUsername](../../README.md#apiUsername)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **pickOrderUnit**
+> pickOrderUnit($id)
+
+Change order unit status to 'picking'
+
+Change order unit status to 'picking'
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: apiUsername
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+
+$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
+$id = "id_example"; // string | ID of order unit to update the status
+
+try {
+    $api_instance->pickOrderUnit($id);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderUnitApi->pickOrderUnit: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of order unit to update the status |
 
 ### Return type
 

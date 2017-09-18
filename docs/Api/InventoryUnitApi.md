@@ -4,10 +4,66 @@ All URIs are relative to *https://sms.real.de/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createInventoryUnit**](InventoryUnitApi.md#createInventoryUnit) | **POST** /inventory-units | Create new inventory unit
 [**deleteInventoryUnit**](InventoryUnitApi.md#deleteInventoryUnit) | **DELETE** /inventory-units/{id} | Delete inventory unit by ID
 [**getInventoryUnit**](InventoryUnitApi.md#getInventoryUnit) | **GET** /inventory-units/{id} | Find inventory unit by ID
+[**getInventoryUnits**](InventoryUnitApi.md#getInventoryUnits) | **GET** /inventory-units | Find all inventory units
 [**updateInventoryUnit**](InventoryUnitApi.md#updateInventoryUnit) | **PATCH** /inventory-units/{id} | Update inventory unit
 
+
+# **createInventoryUnit**
+> \SMS\Suppliers\Model\CreateInventoryUnitResponse createInventoryUnit($body)
+
+Create new inventory unit
+
+Creates a new inventory unit with specified data
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: apiUsername
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+
+$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+$body = new \SMS\Suppliers\Model\CreateInventoryUnitRequest(); // \SMS\Suppliers\Model\CreateInventoryUnitRequest | Inventory unit object that needs to be added to the inventory
+
+try {
+    $result = $api_instance->createInventoryUnit($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InventoryUnitApi->createInventoryUnit: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\SMS\Suppliers\Model\CreateInventoryUnitRequest**](../Model/CreateInventoryUnitRequest.md)| Inventory unit object that needs to be added to the inventory |
+
+### Return type
+
+[**\SMS\Suppliers\Model\CreateInventoryUnitResponse**](../Model/CreateInventoryUnitResponse.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [apiUsername](../../README.md#apiUsername)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteInventoryUnit**
 > deleteInventoryUnit($id)
@@ -116,12 +172,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getInventoryUnits**
+> getInventoryUnits()
+
+Find all inventory units
+
+Returns a list of inventory units
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// Configure API key authorization: apiUsername
+SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+
+$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+
+try {
+    $api_instance->getInventoryUnits();
+} catch (Exception $e) {
+    echo 'Exception when calling InventoryUnitApi->getInventoryUnits: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [apiUsername](../../README.md#apiUsername)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **updateInventoryUnit**
 > updateInventoryUnit($id, $body)
 
 Update inventory unit
 
-Update inventory unit
+Updates an inventory unit by specified ID
 
 ### Example
 ```php
