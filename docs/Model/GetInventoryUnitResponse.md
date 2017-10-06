@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **supplier_item_id** | **string** | Supplier Item ID | 
 **minimal_order_volume** | **int** | Minimal Order Volume | 
 **shipping_cost** | **float** | Shipping Cost | 
+**return_shipping_cost** | **float** | Return shipping Cost | 
 **delivery_min_time** | **int** | Minimal Delivery Time | 
 **delivery_max_time** | **int** | Maximum Delivery Time | 
 **is_hauler_delivery** | **bool** | If this unit required a hauler delivery | 
