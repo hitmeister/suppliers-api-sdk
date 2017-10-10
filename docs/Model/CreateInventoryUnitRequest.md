@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **quantity** | **int** | Unit Quantity | 
 **minimal_order_volume** | **int** | Minimal Order Volume | [optional] 
 **shipping_cost** | **float** | Shipping Cost | 
+**return_shipping_cost** | **float** | Return shipping Cost | [optional] 
 **delivery_min_time** | **int** | Minimal Delivery Time | 
 **delivery_max_time** | **int** | Maximum Delivery Time | 
 **is_hauler_delivery** | **bool** | If this unit required a hauler delivery | [optional] 
