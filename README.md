@@ -92,9 +92,9 @@ Class | Method | HTTP request | Description
 *InventoryUnitApi* | [**getInventoryUnit**](docs/Api/InventoryUnitApi.md#getinventoryunit) | **GET** /inventory-units/{id} | Find inventory unit by ID
 *InventoryUnitApi* | [**getInventoryUnits**](docs/Api/InventoryUnitApi.md#getinventoryunits) | **GET** /inventory-units | Find all inventory units
 *InventoryUnitApi* | [**updateInventoryUnit**](docs/Api/InventoryUnitApi.md#updateinventoryunit) | **PATCH** /inventory-units/{id} | Update inventory unit
-*OrderApi* | [**callList**](docs/Api/OrderApi.md#calllist) | **GET** /orders | Find all orders by given parameters
 *OrderApi* | [**confirmOrder**](docs/Api/OrderApi.md#confirmorder) | **POST** /orders/{id}/confirm | Confirm order
 *OrderApi* | [**getOrder**](docs/Api/OrderApi.md#getorder) | **GET** /orders/{id} | Find order by ID
+*OrderApi* | [**getOrders**](docs/Api/OrderApi.md#getorders) | **GET** /orders | Find all orders by given parameters
 *OrderUnitApi* | [**cancelOrderUnit**](docs/Api/OrderUnitApi.md#cancelorderunit) | **POST** /order-units/{id}/cancel | Cancel an order unit
 *OrderUnitApi* | [**pickOrderUnit**](docs/Api/OrderUnitApi.md#pickorderunit) | **POST** /order-units/{id}/pick | Change order unit status to &#39;picking&#39;
 *OrderUnitApi* | [**sendOrderUnit**](docs/Api/OrderUnitApi.md#sendorderunit) | **POST** /order-units/{id}/send | Send an order unit

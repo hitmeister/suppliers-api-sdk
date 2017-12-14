@@ -88,100 +88,6 @@ class OrderApi
     }
 
     /**
-     * Operation callList
-     *
-     * Find all orders by given parameters
-     *
-     * @param string $created_at Creation date of order (optional)
-     * @param bool $open Order is not sent or canceled (optional)
-     * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return \SMS\Suppliers\Model\GetFulfilmentOrdersResponse
-     */
-    public function callList($created_at = null, $open = null)
-    {
-        list($response) = $this->callListWithHttpInfo($created_at, $open);
-        return $response;
-    }
-
-    /**
-     * Operation callListWithHttpInfo
-     *
-     * Find all orders by given parameters
-     *
-     * @param string $created_at Creation date of order (optional)
-     * @param bool $open Order is not sent or canceled (optional)
-     * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of \SMS\Suppliers\Model\GetFulfilmentOrdersResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function callListWithHttpInfo($created_at = null, $open = null)
-    {
-        // parse inputs
-        $resourcePath = "/orders";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
-
-        // query params
-        if ($created_at !== null) {
-            $queryParams['created_at'] = $this->apiClient->getSerializer()->toQueryValue($created_at);
-        }
-        // query params
-        if ($open !== null) {
-            $queryParams['open'] = $this->apiClient->getSerializer()->toQueryValue($open);
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-username'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\SMS\Suppliers\Model\GetFulfilmentOrdersResponse',
-                '/orders'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetFulfilmentOrdersResponse', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetFulfilmentOrdersResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\BadRequestResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation confirmOrder
      *
      * Confirm order
@@ -353,6 +259,100 @@ class OrderApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetFulfilmentOrderResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOrders
+     *
+     * Find all orders by given parameters
+     *
+     * @param string $created_at Creation date of order (optional)
+     * @param bool $open Order is not sent or canceled (optional)
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return \SMS\Suppliers\Model\GetFulfilmentOrdersResponse
+     */
+    public function getOrders($created_at = null, $open = null)
+    {
+        list($response) = $this->getOrdersWithHttpInfo($created_at, $open);
+        return $response;
+    }
+
+    /**
+     * Operation getOrdersWithHttpInfo
+     *
+     * Find all orders by given parameters
+     *
+     * @param string $created_at Creation date of order (optional)
+     * @param bool $open Order is not sent or canceled (optional)
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return array of \SMS\Suppliers\Model\GetFulfilmentOrdersResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOrdersWithHttpInfo($created_at = null, $open = null)
+    {
+        // parse inputs
+        $resourcePath = "/orders";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+
+        // query params
+        if ($created_at !== null) {
+            $queryParams['created_at'] = $this->apiClient->getSerializer()->toQueryValue($created_at);
+        }
+        // query params
+        if ($open !== null) {
+            $queryParams['open'] = $this->apiClient->getSerializer()->toQueryValue($open);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-username'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\SMS\Suppliers\Model\GetFulfilmentOrdersResponse',
+                '/orders'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetFulfilmentOrdersResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetFulfilmentOrdersResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\BadRequestResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
