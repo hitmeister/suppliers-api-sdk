@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateImportRequest
+ * CreateSubscriptionResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * CreateImportRequest Class Doc Comment
+ * CreateSubscriptionResponse Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateImportRequest implements ArrayAccess
+class CreateSubscriptionResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,17 @@ class CreateImportRequest implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreateImportRequest';
+    protected static $swaggerModelName = 'CreateSubscriptionResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-        'type' => 'string'
+        'id' => 'int',
+        'email' => 'string',
+        'event' => 'string',
+        'callback_url' => 'string'
     ];
 
     /**
@@ -63,8 +65,10 @@ class CreateImportRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-        'type' => null
+        'id' => null,
+        'email' => null,
+        'event' => null,
+        'callback_url' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +86,10 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-        'type' => 'type'
+        'id' => 'id',
+        'email' => 'email',
+        'event' => 'event',
+        'callback_url' => 'callback_url'
     ];
 
 
@@ -92,8 +98,10 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-        'type' => 'setType'
+        'id' => 'setId',
+        'email' => 'setEmail',
+        'event' => 'setEvent',
+        'callback_url' => 'setCallbackUrl'
     ];
 
 
@@ -102,8 +110,10 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-        'type' => 'getType'
+        'id' => 'getId',
+        'email' => 'getEmail',
+        'event' => 'getEvent',
+        'callback_url' => 'getCallbackUrl'
     ];
 
     public static function attributeMap()
@@ -121,22 +131,8 @@ class CreateImportRequest implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_DUMP = 'dump';
-    const TYPE_UPDATE = 'update';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_DUMP,
-            self::TYPE_UPDATE,
-        ];
-    }
     
 
     /**
@@ -151,8 +147,10 @@ class CreateImportRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
+        $this->container['callback_url'] = isset($data['callback_url']) ? $data['callback_url'] : null;
     }
 
     /**
@@ -164,20 +162,18 @@ class CreateImportRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['url'] === null) {
-            $invalid_properties[] = "'url' can't be null";
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['type'] === null) {
-            $invalid_properties[] = "'type' can't be null";
+        if ($this->container['email'] === null) {
+            $invalid_properties[] = "'email' can't be null";
         }
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
+        if ($this->container['event'] === null) {
+            $invalid_properties[] = "'event' can't be null";
         }
-
+        if ($this->container['callback_url'] === null) {
+            $invalid_properties[] = "'callback_url' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -190,14 +186,16 @@ class CreateImportRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['url'] === null) {
+        if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['type'] === null) {
+        if ($this->container['email'] === null) {
             return false;
         }
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ($this->container['event'] === null) {
+            return false;
+        }
+        if ($this->container['callback_url'] === null) {
             return false;
         }
         return true;
@@ -205,52 +203,85 @@ class CreateImportRequest implements ArrayAccess
 
 
     /**
-     * Gets url
-     * @return string
+     * Gets id
+     * @return int
      */
-    public function getUrl()
+    public function getId()
     {
-        return $this->container['url'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets url
-     * @param string $url Url to download import file
+     * Sets id
+     * @param int $id ID of already created subscription. Can be used to modify or delete subscription
      * @return $this
      */
-    public function setUrl($url)
+    public function setId($id)
     {
-        $this->container['url'] = $url;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets email
      * @return string
      */
-    public function getType()
+    public function getEmail()
     {
-        return $this->container['type'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets type
-     * @param string $type Import file type
+     * Sets email
+     * @param string $email Fallback Email uses to contact supplier when system can not successfully sent a push notification
      * @return $this
      */
-    public function setType($type)
+    public function setEmail($email)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['type'] = $type;
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets event
+     * @return string
+     */
+    public function getEvent()
+    {
+        return $this->container['event'];
+    }
+
+    /**
+     * Sets event
+     * @param string $event Subscription Event
+     * @return $this
+     */
+    public function setEvent($event)
+    {
+        $this->container['event'] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Gets callback_url
+     * @return string
+     */
+    public function getCallbackUrl()
+    {
+        return $this->container['callback_url'];
+    }
+
+    /**
+     * Sets callback_url
+     * @param string $callback_url This Callback URL will receive new push notifications from SMS
+     * @return $this
+     */
+    public function setCallbackUrl($callback_url)
+    {
+        $this->container['callback_url'] = $callback_url;
 
         return $this;
     }
