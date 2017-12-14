@@ -1,6 +1,6 @@
 <?php
 /**
- * InventoryUnitApi
+ * SubscriptionApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \SMS\Suppliers\Configuration;
 use \SMS\Suppliers\ObjectSerializer;
 
 /**
- * InventoryUnitApi Class Doc Comment
+ * SubscriptionApi Class Doc Comment
  *
  * @category Class
  * @package  SMS\Suppliers
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InventoryUnitApi
+class SubscriptionApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class InventoryUnitApi
      *
      * @param \SMS\Suppliers\ApiClient $apiClient set the API client
      *
-     * @return InventoryUnitApi
+     * @return SubscriptionApi
      */
     public function setApiClient(\SMS\Suppliers\ApiClient $apiClient)
     {
@@ -88,37 +88,37 @@ class InventoryUnitApi
     }
 
     /**
-     * Operation createInventoryUnit
+     * Operation createSubscription
      *
-     * Create new inventory unit
+     * Create new subscription
      *
-     * @param \SMS\Suppliers\Model\CreateInventoryUnitRequest $body Inventory unit object that needs to be added to the inventory (required)
+     * @param \SMS\Suppliers\Model\CreateSubscriptionRequest $body Subscription object that needs to be created (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return \SMS\Suppliers\Model\CreateInventoryUnitResponse
+     * @return \SMS\Suppliers\Model\CreateSubscriptionResponse
      */
-    public function createInventoryUnit($body)
+    public function createSubscription($body)
     {
-        list($response) = $this->createInventoryUnitWithHttpInfo($body);
+        list($response) = $this->createSubscriptionWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation createInventoryUnitWithHttpInfo
+     * Operation createSubscriptionWithHttpInfo
      *
-     * Create new inventory unit
+     * Create new subscription
      *
-     * @param \SMS\Suppliers\Model\CreateInventoryUnitRequest $body Inventory unit object that needs to be added to the inventory (required)
+     * @param \SMS\Suppliers\Model\CreateSubscriptionRequest $body Subscription object that needs to be created (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of \SMS\Suppliers\Model\CreateInventoryUnitResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SMS\Suppliers\Model\CreateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createInventoryUnitWithHttpInfo($body)
+    public function createSubscriptionWithHttpInfo($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $body when calling createInventoryUnit');
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling createSubscription');
         }
         // parse inputs
-        $resourcePath = "/inventory-units";
+        $resourcePath = "/subscriptions";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -159,15 +159,15 @@ class InventoryUnitApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\SMS\Suppliers\Model\CreateInventoryUnitResponse',
-                '/inventory-units'
+                '\SMS\Suppliers\Model\CreateSubscriptionResponse',
+                '/subscriptions'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\CreateInventoryUnitResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\CreateSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\CreateInventoryUnitResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\CreateSubscriptionResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -181,37 +181,31 @@ class InventoryUnitApi
     }
 
     /**
-     * Operation deleteInventoryUnit
+     * Operation deleteSubscription
      *
-     * Delete inventory unit by ID
+     * Delete existing subscription
      *
-     * @param string $id ID of inventory unit to delete (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return void
      */
-    public function deleteInventoryUnit($id)
+    public function deleteSubscription()
     {
-        list($response) = $this->deleteInventoryUnitWithHttpInfo($id);
+        list($response) = $this->deleteSubscriptionWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation deleteInventoryUnitWithHttpInfo
+     * Operation deleteSubscriptionWithHttpInfo
      *
-     * Delete inventory unit by ID
+     * Delete existing subscription
      *
-     * @param string $id ID of inventory unit to delete (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteInventoryUnitWithHttpInfo($id)
+    public function deleteSubscriptionWithHttpInfo()
     {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling deleteInventoryUnit');
-        }
         // parse inputs
-        $resourcePath = "/inventory-units/{id}";
+        $resourcePath = "/subscriptions/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -220,16 +214,8 @@ class InventoryUnitApi
         if (!is_null($_header_accept)) {
             $headerParams['Accept'] = $_header_accept;
         }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
 
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -256,7 +242,7 @@ class InventoryUnitApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/inventory-units/{id}'
+                '/subscriptions/{id}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -269,205 +255,37 @@ class InventoryUnitApi
     }
 
     /**
-     * Operation getInventoryUnit
+     * Operation updateSubscription
      *
-     * Find inventory unit by ID
+     * Update existing subscription
      *
-     * @param string $id ID of inventory unit to return (required)
+     * @param \SMS\Suppliers\Model\UpdateSubscriptionRequest $body Subscription object that needs to be created (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return \SMS\Suppliers\Model\GetInventoryUnitResponse
+     * @return \SMS\Suppliers\Model\UpdateSubscriptionResponse
      */
-    public function getInventoryUnit($id)
+    public function updateSubscription($body)
     {
-        list($response) = $this->getInventoryUnitWithHttpInfo($id);
+        list($response) = $this->updateSubscriptionWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation getInventoryUnitWithHttpInfo
+     * Operation updateSubscriptionWithHttpInfo
      *
-     * Find inventory unit by ID
+     * Update existing subscription
      *
-     * @param string $id ID of inventory unit to return (required)
+     * @param \SMS\Suppliers\Model\UpdateSubscriptionRequest $body Subscription object that needs to be created (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of \SMS\Suppliers\Model\GetInventoryUnitResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SMS\Suppliers\Model\UpdateSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getInventoryUnitWithHttpInfo($id)
+    public function updateSubscriptionWithHttpInfo($body)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling getInventoryUnit');
+        // verify the required parameter 'body' is set
+        if ($body === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $body when calling updateSubscription');
         }
         // parse inputs
-        $resourcePath = "/inventory-units/{id}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-username'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\SMS\Suppliers\Model\GetInventoryUnitResponse',
-                '/inventory-units/{id}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\GetInventoryUnitResponse', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\GetInventoryUnitResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getInventoryUnits
-     *
-     * Find all inventory units
-     *
-     * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return void
-     */
-    public function getInventoryUnits()
-    {
-        list($response) = $this->getInventoryUnitsWithHttpInfo();
-        return $response;
-    }
-
-    /**
-     * Operation getInventoryUnitsWithHttpInfo
-     *
-     * Find all inventory units
-     *
-     * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getInventoryUnitsWithHttpInfo()
-    {
-        // parse inputs
-        $resourcePath = "/inventory-units";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
-
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-key'] = $apiKey;
-        }
-        // this endpoint requires API key authentication
-        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
-        if (strlen($apiKey) !== 0) {
-            $headerParams['api-username'] = $apiKey;
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/inventory-units'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateInventoryUnit
-     *
-     * Update inventory unit
-     *
-     * @param string $id ID of inventory (required)
-     * @param \SMS\Suppliers\Model\UpdateInventoryUnitRequest $body Inventory unit object that needs to be updated (optional)
-     * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return void
-     */
-    public function updateInventoryUnit($id, $body = null)
-    {
-        list($response) = $this->updateInventoryUnitWithHttpInfo($id, $body);
-        return $response;
-    }
-
-    /**
-     * Operation updateInventoryUnitWithHttpInfo
-     *
-     * Update inventory unit
-     *
-     * @param string $id ID of inventory (required)
-     * @param \SMS\Suppliers\Model\UpdateInventoryUnitRequest $body Inventory unit object that needs to be updated (optional)
-     * @throws \SMS\Suppliers\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function updateInventoryUnitWithHttpInfo($id, $body = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling updateInventoryUnit');
-        }
-        // parse inputs
-        $resourcePath = "/inventory-units/{id}";
+        $resourcePath = "/subscriptions/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -478,14 +296,6 @@ class InventoryUnitApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
         // body params
         $_tempBody = null;
         if (isset($body)) {
@@ -516,17 +326,173 @@ class InventoryUnitApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
+                '\SMS\Suppliers\Model\UpdateSubscriptionResponse',
+                '/subscriptions/{id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\UpdateSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\UpdateSubscriptionResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\BadRequestResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation viewSubscription
+     *
+     * View existing subscription
+     *
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return \SMS\Suppliers\Model\ViewSubscriptionResponse
+     */
+    public function viewSubscription()
+    {
+        list($response) = $this->viewSubscriptionWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation viewSubscriptionWithHttpInfo
+     *
+     * View existing subscription
+     *
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return array of \SMS\Suppliers\Model\ViewSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function viewSubscriptionWithHttpInfo()
+    {
+        // parse inputs
+        $resourcePath = "/subscriptions/{id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-username'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\SMS\Suppliers\Model\ViewSubscriptionResponse',
+                '/subscriptions/{id}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SMS\Suppliers\Model\ViewSubscriptionResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\ViewSubscriptionResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation viewSubscriptions
+     *
+     * Get all existing subscriptions
+     *
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return void
+     */
+    public function viewSubscriptions()
+    {
+        list($response) = $this->viewSubscriptionsWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation viewSubscriptionsWithHttpInfo
+     *
+     * Get all existing subscriptions
+     *
+     * @throws \SMS\Suppliers\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function viewSubscriptionsWithHttpInfo()
+    {
+        // parse inputs
+        $resourcePath = "/subscriptions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-key');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-key'] = $apiKey;
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('api-username');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['api-username'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
                 null,
-                '/inventory-units/{id}'
+                '/subscriptions'
             );
 
             return [null, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 400:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SMS\Suppliers\Model\BadRequestResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
             }
 
             throw $e;

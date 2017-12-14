@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateImportRequest
+ * GetFulfilmentOrderResponseUnits
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * CreateImportRequest Class Doc Comment
+ * GetFulfilmentOrderResponseUnits Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateImportRequest implements ArrayAccess
+class GetFulfilmentOrderResponseUnits implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,19 @@ class CreateImportRequest implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreateImportRequest';
+    protected static $swaggerModelName = 'GetFulfilmentOrderResponse_units';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-        'type' => 'string'
+        'item_title' => 'string',
+        'gtin' => 'string',
+        'sku' => 'string',
+        'price' => 'string',
+        'amount' => 'int',
+        'delivery_time_expires' => 'string'
     ];
 
     /**
@@ -63,8 +67,12 @@ class CreateImportRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-        'type' => null
+        'item_title' => null,
+        'gtin' => null,
+        'sku' => null,
+        'price' => null,
+        'amount' => null,
+        'delivery_time_expires' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +90,12 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-        'type' => 'type'
+        'item_title' => 'item_title',
+        'gtin' => 'gtin',
+        'sku' => 'sku',
+        'price' => 'price',
+        'amount' => 'amount',
+        'delivery_time_expires' => 'delivery_time_expires'
     ];
 
 
@@ -92,8 +104,12 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-        'type' => 'setType'
+        'item_title' => 'setItemTitle',
+        'gtin' => 'setGtin',
+        'sku' => 'setSku',
+        'price' => 'setPrice',
+        'amount' => 'setAmount',
+        'delivery_time_expires' => 'setDeliveryTimeExpires'
     ];
 
 
@@ -102,8 +118,12 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-        'type' => 'getType'
+        'item_title' => 'getItemTitle',
+        'gtin' => 'getGtin',
+        'sku' => 'getSku',
+        'price' => 'getPrice',
+        'amount' => 'getAmount',
+        'delivery_time_expires' => 'getDeliveryTimeExpires'
     ];
 
     public static function attributeMap()
@@ -121,22 +141,8 @@ class CreateImportRequest implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_DUMP = 'dump';
-    const TYPE_UPDATE = 'update';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_DUMP,
-            self::TYPE_UPDATE,
-        ];
-    }
     
 
     /**
@@ -151,8 +157,12 @@ class CreateImportRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['item_title'] = isset($data['item_title']) ? $data['item_title'] : null;
+        $this->container['gtin'] = isset($data['gtin']) ? $data['gtin'] : null;
+        $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['delivery_time_expires'] = isset($data['delivery_time_expires']) ? $data['delivery_time_expires'] : null;
     }
 
     /**
@@ -164,20 +174,21 @@ class CreateImportRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['url'] === null) {
-            $invalid_properties[] = "'url' can't be null";
+        if ($this->container['item_title'] === null) {
+            $invalid_properties[] = "'item_title' can't be null";
         }
-        if ($this->container['type'] === null) {
-            $invalid_properties[] = "'type' can't be null";
+        if ($this->container['gtin'] === null) {
+            $invalid_properties[] = "'gtin' can't be null";
         }
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
+        if ($this->container['price'] === null) {
+            $invalid_properties[] = "'price' can't be null";
         }
-
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
+        if ($this->container['delivery_time_expires'] === null) {
+            $invalid_properties[] = "'delivery_time_expires' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -190,14 +201,19 @@ class CreateImportRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['url'] === null) {
+        if ($this->container['item_title'] === null) {
             return false;
         }
-        if ($this->container['type'] === null) {
+        if ($this->container['gtin'] === null) {
             return false;
         }
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ($this->container['price'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['delivery_time_expires'] === null) {
             return false;
         }
         return true;
@@ -205,52 +221,127 @@ class CreateImportRequest implements ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets item_title
      * @return string
      */
-    public function getUrl()
+    public function getItemTitle()
     {
-        return $this->container['url'];
+        return $this->container['item_title'];
     }
 
     /**
-     * Sets url
-     * @param string $url Url to download import file
+     * Sets item_title
+     * @param string $item_title
      * @return $this
      */
-    public function setUrl($url)
+    public function setItemTitle($item_title)
     {
-        $this->container['url'] = $url;
+        $this->container['item_title'] = $item_title;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets gtin
      * @return string
      */
-    public function getType()
+    public function getGtin()
     {
-        return $this->container['type'];
+        return $this->container['gtin'];
     }
 
     /**
-     * Sets type
-     * @param string $type Import file type
+     * Sets gtin
+     * @param string $gtin
      * @return $this
      */
-    public function setType($type)
+    public function setGtin($gtin)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['type'] = $type;
+        $this->container['gtin'] = $gtin;
+
+        return $this;
+    }
+
+    /**
+     * Gets sku
+     * @return string
+     */
+    public function getSku()
+    {
+        return $this->container['sku'];
+    }
+
+    /**
+     * Sets sku
+     * @param string $sku
+     * @return $this
+     */
+    public function setSku($sku)
+    {
+        $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     * @param string $price
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     * @param int $amount
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_time_expires
+     * @return string
+     */
+    public function getDeliveryTimeExpires()
+    {
+        return $this->container['delivery_time_expires'];
+    }
+
+    /**
+     * Sets delivery_time_expires
+     * @param string $delivery_time_expires
+     * @return $this
+     */
+    public function setDeliveryTimeExpires($delivery_time_expires)
+    {
+        $this->container['delivery_time_expires'] = $delivery_time_expires;
 
         return $this;
     }
