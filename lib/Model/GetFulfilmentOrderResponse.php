@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateImportRequest
+ * GetFulfilmentOrderResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * CreateImportRequest Class Doc Comment
+ * GetFulfilmentOrderResponse Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateImportRequest implements ArrayAccess
+class GetFulfilmentOrderResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,15 +47,17 @@ class CreateImportRequest implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreateImportRequest';
+    protected static $swaggerModelName = 'GetFulfilmentOrderResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'url' => 'string',
-        'type' => 'string'
+        'id_order' => 'string',
+        'created_at' => 'string',
+        'units' => '\SMS\Suppliers\Model\GetFulfilmentOrderResponseUnits[]',
+        'shipment_address' => '\SMS\Suppliers\Model\GetFulfilmentOrderResponseShipmentAddress'
     ];
 
     /**
@@ -63,8 +65,10 @@ class CreateImportRequest implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'url' => null,
-        'type' => null
+        'id_order' => null,
+        'created_at' => null,
+        'units' => null,
+        'shipment_address' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +86,10 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'url' => 'url',
-        'type' => 'type'
+        'id_order' => 'id_order',
+        'created_at' => 'created_at',
+        'units' => 'units',
+        'shipment_address' => 'shipment_address'
     ];
 
 
@@ -92,8 +98,10 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'url' => 'setUrl',
-        'type' => 'setType'
+        'id_order' => 'setIdOrder',
+        'created_at' => 'setCreatedAt',
+        'units' => 'setUnits',
+        'shipment_address' => 'setShipmentAddress'
     ];
 
 
@@ -102,8 +110,10 @@ class CreateImportRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'url' => 'getUrl',
-        'type' => 'getType'
+        'id_order' => 'getIdOrder',
+        'created_at' => 'getCreatedAt',
+        'units' => 'getUnits',
+        'shipment_address' => 'getShipmentAddress'
     ];
 
     public static function attributeMap()
@@ -121,22 +131,8 @@ class CreateImportRequest implements ArrayAccess
         return self::$getters;
     }
 
-    const TYPE_DUMP = 'dump';
-    const TYPE_UPDATE = 'update';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_DUMP,
-            self::TYPE_UPDATE,
-        ];
-    }
     
 
     /**
@@ -151,8 +147,10 @@ class CreateImportRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['id_order'] = isset($data['id_order']) ? $data['id_order'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['units'] = isset($data['units']) ? $data['units'] : null;
+        $this->container['shipment_address'] = isset($data['shipment_address']) ? $data['shipment_address'] : null;
     }
 
     /**
@@ -164,20 +162,15 @@ class CreateImportRequest implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['url'] === null) {
-            $invalid_properties[] = "'url' can't be null";
+        if ($this->container['id_order'] === null) {
+            $invalid_properties[] = "'id_order' can't be null";
         }
-        if ($this->container['type'] === null) {
-            $invalid_properties[] = "'type' can't be null";
+        if ($this->container['created_at'] === null) {
+            $invalid_properties[] = "'created_at' can't be null";
         }
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowed_values)
-            );
+        if ($this->container['units'] === null) {
+            $invalid_properties[] = "'units' can't be null";
         }
-
         return $invalid_properties;
     }
 
@@ -190,14 +183,13 @@ class CreateImportRequest implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['url'] === null) {
+        if ($this->container['id_order'] === null) {
             return false;
         }
-        if ($this->container['type'] === null) {
+        if ($this->container['created_at'] === null) {
             return false;
         }
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ($this->container['units'] === null) {
             return false;
         }
         return true;
@@ -205,52 +197,85 @@ class CreateImportRequest implements ArrayAccess
 
 
     /**
-     * Gets url
+     * Gets id_order
      * @return string
      */
-    public function getUrl()
+    public function getIdOrder()
     {
-        return $this->container['url'];
+        return $this->container['id_order'];
     }
 
     /**
-     * Sets url
-     * @param string $url Url to download import file
+     * Sets id_order
+     * @param string $id_order
      * @return $this
      */
-    public function setUrl($url)
+    public function setIdOrder($id_order)
     {
-        $this->container['url'] = $url;
+        $this->container['id_order'] = $id_order;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets created_at
      * @return string
      */
-    public function getType()
+    public function getCreatedAt()
     {
-        return $this->container['type'];
+        return $this->container['created_at'];
     }
 
     /**
-     * Sets type
-     * @param string $type Import file type
+     * Sets created_at
+     * @param string $created_at
      * @return $this
      */
-    public function setType($type)
+    public function setCreatedAt($created_at)
     {
-        $allowed_values = $this->getTypeAllowableValues();
-        if (!in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
-        $this->container['type'] = $type;
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets units
+     * @return \SMS\Suppliers\Model\GetFulfilmentOrderResponseUnits[]
+     */
+    public function getUnits()
+    {
+        return $this->container['units'];
+    }
+
+    /**
+     * Sets units
+     * @param \SMS\Suppliers\Model\GetFulfilmentOrderResponseUnits[] $units
+     * @return $this
+     */
+    public function setUnits($units)
+    {
+        $this->container['units'] = $units;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipment_address
+     * @return \SMS\Suppliers\Model\GetFulfilmentOrderResponseShipmentAddress
+     */
+    public function getShipmentAddress()
+    {
+        return $this->container['shipment_address'];
+    }
+
+    /**
+     * Sets shipment_address
+     * @param \SMS\Suppliers\Model\GetFulfilmentOrderResponseShipmentAddress $shipment_address
+     * @return $this
+     */
+    public function setShipmentAddress($shipment_address)
+    {
+        $this->container['shipment_address'] = $shipment_address;
 
         return $this;
     }

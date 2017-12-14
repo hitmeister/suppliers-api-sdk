@@ -3,9 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**item_id** | **int** | Item ID | [optional] 
-**condition** | **string** | Unit condition | [optional] 
-**ean** | **string** | EAN | [optional] 
 **price** | **float** | Unit Price | [optional] 
 **quantity** | **int** | Unit Quantity | [optional] 
 **minimal_order_volume** | **int** | Minimal Order Volume | [optional] 

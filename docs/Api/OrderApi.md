@@ -4,17 +4,17 @@ All URIs are relative to *https://sms.real.de/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelOrder**](OrderApi.md#cancelOrder) | **POST** /orders/{id}/cancel | Cancel whole order
+[**callList**](OrderApi.md#callList) | **GET** /orders | Find all orders by given parameters
 [**confirmOrder**](OrderApi.md#confirmOrder) | **POST** /orders/{id}/confirm | Confirm order
 [**getOrder**](OrderApi.md#getOrder) | **GET** /orders/{id} | Find order by ID
 
 
-# **cancelOrder**
-> cancelOrder($id, $body)
+# **callList**
+> \SMS\Suppliers\Model\GetFulfilmentOrdersResponse callList($created_at, $open)
 
-Cancel whole order
+Find all orders by given parameters
 
-Cancels all order units
+Returns list of orders
 
 ### Example
 ```php
@@ -31,13 +31,14 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\OrderApi();
-$id = "id_example"; // string | ID of order to cancel
-$body = new \SMS\Suppliers\Model\CancelOrderRequest(); // \SMS\Suppliers\Model\CancelOrderRequest | Pet object that needs to be added to the store
+$created_at = "created_at_example"; // string | Creation date of order
+$open = true; // bool | Order is not sent or canceled
 
 try {
-    $api_instance->cancelOrder($id, $body);
+    $result = $api_instance->callList($created_at, $open);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->cancelOrder: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->callList: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -46,12 +47,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of order to cancel |
- **body** | [**\SMS\Suppliers\Model\CancelOrderRequest**](../Model/CancelOrderRequest.md)| Pet object that needs to be added to the store |
+ **created_at** | **string**| Creation date of order | [optional]
+ **open** | **bool**| Order is not sent or canceled | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\SMS\Suppliers\Model\GetFulfilmentOrdersResponse**](../Model/GetFulfilmentOrdersResponse.md)
 
 ### Authorization
 
@@ -59,7 +60,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -118,7 +119,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrder**
-> \SMS\Suppliers\Model\GetOrderResponse getOrder($id)
+> \SMS\Suppliers\Model\GetFulfilmentOrderResponse getOrder($id)
 
 Find order by ID
 
@@ -158,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SMS\Suppliers\Model\GetOrderResponse**](../Model/GetOrderResponse.md)
+[**\SMS\Suppliers\Model\GetFulfilmentOrderResponse**](../Model/GetFulfilmentOrderResponse.md)
 
 ### Authorization
 
