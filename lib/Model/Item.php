@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateInventoryUnitResponse
+ * Item
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * CreateInventoryUnitResponse Class Doc Comment
+ * Item Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateInventoryUnitResponse implements ArrayAccess
+class Item implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,16 @@ class CreateInventoryUnitResponse implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreateInventoryUnitResponse';
+    protected static $swaggerModelName = 'Item';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string'
+        'id_item' => 'int',
+        'gtin' => 'string',
+        'title' => 'string'
     ];
 
     /**
@@ -62,7 +64,9 @@ class CreateInventoryUnitResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null
+        'id_item' => null,
+        'gtin' => null,
+        'title' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +84,9 @@ class CreateInventoryUnitResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id'
+        'id_item' => 'id_item',
+        'gtin' => 'gtin',
+        'title' => 'title'
     ];
 
 
@@ -89,7 +95,9 @@ class CreateInventoryUnitResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId'
+        'id_item' => 'setIdItem',
+        'gtin' => 'setGtin',
+        'title' => 'setTitle'
     ];
 
 
@@ -98,7 +106,9 @@ class CreateInventoryUnitResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId'
+        'id_item' => 'getIdItem',
+        'gtin' => 'getGtin',
+        'title' => 'getTitle'
     ];
 
     public static function attributeMap()
@@ -132,7 +142,9 @@ class CreateInventoryUnitResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['id_item'] = isset($data['id_item']) ? $data['id_item'] : null;
+        $this->container['gtin'] = isset($data['gtin']) ? $data['gtin'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
     }
 
     /**
@@ -144,8 +156,14 @@ class CreateInventoryUnitResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
+        if ($this->container['id_item'] === null) {
+            $invalid_properties[] = "'id_item' can't be null";
+        }
+        if ($this->container['gtin'] === null) {
+            $invalid_properties[] = "'gtin' can't be null";
+        }
+        if ($this->container['title'] === null) {
+            $invalid_properties[] = "'title' can't be null";
         }
         return $invalid_properties;
     }
@@ -159,7 +177,13 @@ class CreateInventoryUnitResponse implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
+        if ($this->container['id_item'] === null) {
+            return false;
+        }
+        if ($this->container['gtin'] === null) {
+            return false;
+        }
+        if ($this->container['title'] === null) {
             return false;
         }
         return true;
@@ -167,22 +191,64 @@ class CreateInventoryUnitResponse implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
+     * Gets id_item
+     * @return int
      */
-    public function getId()
+    public function getIdItem()
     {
-        return $this->container['id'];
+        return $this->container['id_item'];
     }
 
     /**
-     * Sets id
-     * @param string $id
+     * Sets id_item
+     * @param int $id_item
      * @return $this
      */
-    public function setId($id)
+    public function setIdItem($id_item)
     {
-        $this->container['id'] = $id;
+        $this->container['id_item'] = $id_item;
+
+        return $this;
+    }
+
+    /**
+     * Gets gtin
+     * @return string
+     */
+    public function getGtin()
+    {
+        return $this->container['gtin'];
+    }
+
+    /**
+     * Sets gtin
+     * @param string $gtin
+     * @return $this
+     */
+    public function setGtin($gtin)
+    {
+        $this->container['gtin'] = $gtin;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     * @param string $title
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
 
         return $this;
     }

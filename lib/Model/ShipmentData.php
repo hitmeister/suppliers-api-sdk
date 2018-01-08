@@ -1,6 +1,6 @@
 <?php
 /**
- * GetFulfilmentOrderResponse
+ * ShipmentData
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace SMS\Suppliers\Model;
 use \ArrayAccess;
 
 /**
- * GetFulfilmentOrderResponse Class Doc Comment
+ * ShipmentData Class Doc Comment
  *
  * @category    Class
  * @package     SMS\Suppliers
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GetFulfilmentOrderResponse implements ArrayAccess
+class ShipmentData implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,19 +47,16 @@ class GetFulfilmentOrderResponse implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'GetFulfilmentOrderResponse';
+    protected static $swaggerModelName = 'ShipmentData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'fulfilment_order_id' => 'int',
-        'customer_order_id' => 'string',
-        'created_at' => 'string',
-        'units' => '\SMS\Suppliers\Model\GetFulfilmentOrderResponseUnits[]',
-        'shipment_data' => '\SMS\Suppliers\Model\ShipmentData[]',
-        'shipment_address' => '\SMS\Suppliers\Model\ShipmentAddress'
+        'carrier' => 'string',
+        'tracking_number' => 'string',
+        'created_at' => 'string'
     ];
 
     /**
@@ -67,12 +64,9 @@ class GetFulfilmentOrderResponse implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'fulfilment_order_id' => null,
-        'customer_order_id' => null,
-        'created_at' => null,
-        'units' => null,
-        'shipment_data' => null,
-        'shipment_address' => null
+        'carrier' => null,
+        'tracking_number' => null,
+        'created_at' => null
     ];
 
     public static function swaggerTypes()
@@ -90,12 +84,9 @@ class GetFulfilmentOrderResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'fulfilment_order_id' => 'fulfilment_order_id',
-        'customer_order_id' => 'customer_order_id',
-        'created_at' => 'created_at',
-        'units' => 'units',
-        'shipment_data' => 'shipment_data',
-        'shipment_address' => 'shipment_address'
+        'carrier' => 'carrier',
+        'tracking_number' => 'tracking_number',
+        'created_at' => 'created_at'
     ];
 
 
@@ -104,12 +95,9 @@ class GetFulfilmentOrderResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'fulfilment_order_id' => 'setFulfilmentOrderId',
-        'customer_order_id' => 'setCustomerOrderId',
-        'created_at' => 'setCreatedAt',
-        'units' => 'setUnits',
-        'shipment_data' => 'setShipmentData',
-        'shipment_address' => 'setShipmentAddress'
+        'carrier' => 'setCarrier',
+        'tracking_number' => 'setTrackingNumber',
+        'created_at' => 'setCreatedAt'
     ];
 
 
@@ -118,12 +106,9 @@ class GetFulfilmentOrderResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'fulfilment_order_id' => 'getFulfilmentOrderId',
-        'customer_order_id' => 'getCustomerOrderId',
-        'created_at' => 'getCreatedAt',
-        'units' => 'getUnits',
-        'shipment_data' => 'getShipmentData',
-        'shipment_address' => 'getShipmentAddress'
+        'carrier' => 'getCarrier',
+        'tracking_number' => 'getTrackingNumber',
+        'created_at' => 'getCreatedAt'
     ];
 
     public static function attributeMap()
@@ -141,8 +126,84 @@ class GetFulfilmentOrderResponse implements ArrayAccess
         return self::$getters;
     }
 
+    const CARRIER_BURSPRED = 'burspred';
+    const CARRIER_CARGOLINE = 'cargoline';
+    const CARRIER_COMPUTERUNIVERSE = 'computeruniverse';
+    const CARRIER_DHL = 'dhl';
+    const CARRIER_DHL_2_MH = 'dhl_2_mh';
+    const CARRIER_DHL_EXPRESS = 'dhl_express';
+    const CARRIER_DHL_FREIGHT = 'dhl_freight';
+    const CARRIER_DTL = 'dtl';
+    const CARRIER_DPD = 'dpd';
+    const CARRIER_DELIVERY_TO_STORE = 'delivery_to_store';
+    const CARRIER_DEUTSCHE_POST = 'deutsche_post';
+    const CARRIER_DACHSER = 'dachser';
+    const CARRIER_EMONS = 'emons';
+    const CARRIER_FEDEX = 'fedex';
+    const CARRIER_GLS = 'gls';
+    const CARRIER_GEL = 'gel';
+    const CARRIER_HERMES = 'hermes';
+    const CARRIER_HERMES_2_MH = 'hermes_2_mh';
+    const CARRIER_HELLMANN = 'hellmann';
+    const CARRIER_IDS_LOGISTIK = 'ids_logistik';
+    const CARRIER_ILOXX = 'iloxx';
+    const CARRIER_KUEHNE_AND_NAGEL = 'kuehne_and_nagel';
+    const CARRIER_RHENUS = 'rhenus';
+    const CARRIER_OTHER = 'other';
+    const CARRIER_OTHER_HAULER = 'other_hauler';
+    const CARRIER_POST_ITALIANE = 'post_italiane';
+    const CARRIER_SCHENKER = 'schenker';
+    const CARRIER_SPEDITION_GUETTLER = 'spedition_guettler';
+    const CARRIER_TNT = 'tnt';
+    const CARRIER_TRANS_FM = 'trans_fm';
+    const CARRIER_TRANS_O_FLEX = 'trans-o-flex';
+    const CARRIER_UPS = 'ups';
+    const CARRIER_ZUFALL = 'zufall';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getCarrierAllowableValues()
+    {
+        return [
+            self::CARRIER_BURSPRED,
+            self::CARRIER_CARGOLINE,
+            self::CARRIER_COMPUTERUNIVERSE,
+            self::CARRIER_DHL,
+            self::CARRIER_DHL_2_MH,
+            self::CARRIER_DHL_EXPRESS,
+            self::CARRIER_DHL_FREIGHT,
+            self::CARRIER_DTL,
+            self::CARRIER_DPD,
+            self::CARRIER_DELIVERY_TO_STORE,
+            self::CARRIER_DEUTSCHE_POST,
+            self::CARRIER_DACHSER,
+            self::CARRIER_EMONS,
+            self::CARRIER_FEDEX,
+            self::CARRIER_GLS,
+            self::CARRIER_GEL,
+            self::CARRIER_HERMES,
+            self::CARRIER_HERMES_2_MH,
+            self::CARRIER_HELLMANN,
+            self::CARRIER_IDS_LOGISTIK,
+            self::CARRIER_ILOXX,
+            self::CARRIER_KUEHNE_AND_NAGEL,
+            self::CARRIER_RHENUS,
+            self::CARRIER_OTHER,
+            self::CARRIER_OTHER_HAULER,
+            self::CARRIER_POST_ITALIANE,
+            self::CARRIER_SCHENKER,
+            self::CARRIER_SPEDITION_GUETTLER,
+            self::CARRIER_TNT,
+            self::CARRIER_TRANS_FM,
+            self::CARRIER_TRANS_O_FLEX,
+            self::CARRIER_UPS,
+            self::CARRIER_ZUFALL,
+        ];
+    }
     
 
     /**
@@ -157,12 +218,9 @@ class GetFulfilmentOrderResponse implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['fulfilment_order_id'] = isset($data['fulfilment_order_id']) ? $data['fulfilment_order_id'] : null;
-        $this->container['customer_order_id'] = isset($data['customer_order_id']) ? $data['customer_order_id'] : null;
+        $this->container['carrier'] = isset($data['carrier']) ? $data['carrier'] : null;
+        $this->container['tracking_number'] = isset($data['tracking_number']) ? $data['tracking_number'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
-        $this->container['units'] = isset($data['units']) ? $data['units'] : null;
-        $this->container['shipment_data'] = isset($data['shipment_data']) ? $data['shipment_data'] : null;
-        $this->container['shipment_address'] = isset($data['shipment_address']) ? $data['shipment_address'] : null;
     }
 
     /**
@@ -174,20 +232,22 @@ class GetFulfilmentOrderResponse implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['fulfilment_order_id'] === null) {
-            $invalid_properties[] = "'fulfilment_order_id' can't be null";
+        if ($this->container['carrier'] === null) {
+            $invalid_properties[] = "'carrier' can't be null";
         }
-        if ($this->container['customer_order_id'] === null) {
-            $invalid_properties[] = "'customer_order_id' can't be null";
+        $allowed_values = $this->getCarrierAllowableValues();
+        if (!in_array($this->container['carrier'], $allowed_values)) {
+            $invalid_properties[] = sprintf(
+                "invalid value for 'carrier', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
+
+        if ($this->container['tracking_number'] === null) {
+            $invalid_properties[] = "'tracking_number' can't be null";
         }
         if ($this->container['created_at'] === null) {
             $invalid_properties[] = "'created_at' can't be null";
-        }
-        if ($this->container['units'] === null) {
-            $invalid_properties[] = "'units' can't be null";
-        }
-        if ($this->container['shipment_address'] === null) {
-            $invalid_properties[] = "'shipment_address' can't be null";
         }
         return $invalid_properties;
     }
@@ -201,19 +261,17 @@ class GetFulfilmentOrderResponse implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['fulfilment_order_id'] === null) {
+        if ($this->container['carrier'] === null) {
             return false;
         }
-        if ($this->container['customer_order_id'] === null) {
+        $allowed_values = $this->getCarrierAllowableValues();
+        if (!in_array($this->container['carrier'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['tracking_number'] === null) {
             return false;
         }
         if ($this->container['created_at'] === null) {
-            return false;
-        }
-        if ($this->container['units'] === null) {
-            return false;
-        }
-        if ($this->container['shipment_address'] === null) {
             return false;
         }
         return true;
@@ -221,43 +279,52 @@ class GetFulfilmentOrderResponse implements ArrayAccess
 
 
     /**
-     * Gets fulfilment_order_id
-     * @return int
+     * Gets carrier
+     * @return string
      */
-    public function getFulfilmentOrderId()
+    public function getCarrier()
     {
-        return $this->container['fulfilment_order_id'];
+        return $this->container['carrier'];
     }
 
     /**
-     * Sets fulfilment_order_id
-     * @param int $fulfilment_order_id
+     * Sets carrier
+     * @param string $carrier
      * @return $this
      */
-    public function setFulfilmentOrderId($fulfilment_order_id)
+    public function setCarrier($carrier)
     {
-        $this->container['fulfilment_order_id'] = $fulfilment_order_id;
+        $allowed_values = $this->getCarrierAllowableValues();
+        if (!in_array($carrier, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'carrier', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
+        $this->container['carrier'] = $carrier;
 
         return $this;
     }
 
     /**
-     * Gets customer_order_id
+     * Gets tracking_number
      * @return string
      */
-    public function getCustomerOrderId()
+    public function getTrackingNumber()
     {
-        return $this->container['customer_order_id'];
+        return $this->container['tracking_number'];
     }
 
     /**
-     * Sets customer_order_id
-     * @param string $customer_order_id
+     * Sets tracking_number
+     * @param string $tracking_number
      * @return $this
      */
-    public function setCustomerOrderId($customer_order_id)
+    public function setTrackingNumber($tracking_number)
     {
-        $this->container['customer_order_id'] = $customer_order_id;
+        $this->container['tracking_number'] = $tracking_number;
 
         return $this;
     }
@@ -279,69 +346,6 @@ class GetFulfilmentOrderResponse implements ArrayAccess
     public function setCreatedAt($created_at)
     {
         $this->container['created_at'] = $created_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets units
-     * @return \SMS\Suppliers\Model\GetFulfilmentOrderResponseUnits[]
-     */
-    public function getUnits()
-    {
-        return $this->container['units'];
-    }
-
-    /**
-     * Sets units
-     * @param \SMS\Suppliers\Model\GetFulfilmentOrderResponseUnits[] $units
-     * @return $this
-     */
-    public function setUnits($units)
-    {
-        $this->container['units'] = $units;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipment_data
-     * @return \SMS\Suppliers\Model\ShipmentData[]
-     */
-    public function getShipmentData()
-    {
-        return $this->container['shipment_data'];
-    }
-
-    /**
-     * Sets shipment_data
-     * @param \SMS\Suppliers\Model\ShipmentData[] $shipment_data
-     * @return $this
-     */
-    public function setShipmentData($shipment_data)
-    {
-        $this->container['shipment_data'] = $shipment_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets shipment_address
-     * @return \SMS\Suppliers\Model\ShipmentAddress
-     */
-    public function getShipmentAddress()
-    {
-        return $this->container['shipment_address'];
-    }
-
-    /**
-     * Sets shipment_address
-     * @param \SMS\Suppliers\Model\ShipmentAddress $shipment_address
-     * @return $this
-     */
-    public function setShipmentAddress($shipment_address)
-    {
-        $this->container['shipment_address'] = $shipment_address;
 
         return $this;
     }
