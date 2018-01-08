@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSubscription**
-> deleteSubscription()
+> deleteSubscription($id)
 
 Delete existing subscription
 
@@ -87,9 +87,10 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$id = "id_example"; // string | ID of Subscription
 
 try {
-    $api_instance->deleteSubscription();
+    $api_instance->deleteSubscription($id);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->deleteSubscription: ', $e->getMessage(), PHP_EOL;
 }
@@ -97,7 +98,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of Subscription |
 
 ### Return type
 
@@ -115,7 +119,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateSubscription**
-> \SMS\Suppliers\Model\UpdateSubscriptionResponse updateSubscription($body)
+> \SMS\Suppliers\Model\UpdateSubscriptionResponse updateSubscription($id, $body)
 
 Update existing subscription
 
@@ -136,10 +140,11 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$id = "id_example"; // string | ID of Subscription
 $body = new \SMS\Suppliers\Model\UpdateSubscriptionRequest(); // \SMS\Suppliers\Model\UpdateSubscriptionRequest | Subscription object that needs to be created
 
 try {
-    $result = $api_instance->updateSubscription($body);
+    $result = $api_instance->updateSubscription($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->updateSubscription: ', $e->getMessage(), PHP_EOL;
@@ -151,6 +156,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of Subscription |
  **body** | [**\SMS\Suppliers\Model\UpdateSubscriptionRequest**](../Model/UpdateSubscriptionRequest.md)| Subscription object that needs to be created |
 
 ### Return type
@@ -169,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **viewSubscription**
-> \SMS\Suppliers\Model\ViewSubscriptionResponse viewSubscription()
+> \SMS\Suppliers\Model\ViewSubscriptionResponse viewSubscription($id)
 
 View existing subscription
 
@@ -190,9 +196,10 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$id = "id_example"; // string | ID of Subscription
 
 try {
-    $result = $api_instance->viewSubscription();
+    $result = $api_instance->viewSubscription($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->viewSubscription: ', $e->getMessage(), PHP_EOL;
@@ -201,7 +208,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of Subscription |
 
 ### Return type
 
