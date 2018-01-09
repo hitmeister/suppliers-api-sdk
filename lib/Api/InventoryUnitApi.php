@@ -183,9 +183,9 @@ class InventoryUnitApi
     /**
      * Operation deleteInventoryUnit
      *
-     * Delete inventory unit by ID
+     * Delete inventory unit by supplier_item_id
      *
-     * @param string $id ID of inventory unit to delete (required)
+     * @param string $id supplier_item_id of inventory unit to delete (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return void
      */
@@ -198,9 +198,9 @@ class InventoryUnitApi
     /**
      * Operation deleteInventoryUnitWithHttpInfo
      *
-     * Delete inventory unit by ID
+     * Delete inventory unit by supplier_item_id
      *
-     * @param string $id ID of inventory unit to delete (required)
+     * @param string $id supplier_item_id of inventory unit to delete (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -271,9 +271,9 @@ class InventoryUnitApi
     /**
      * Operation getInventoryUnit
      *
-     * Find inventory unit by ID
+     * Find inventory unit by supplier_item_id
      *
-     * @param string $id ID of inventory unit to return (required)
+     * @param string $id supplier_item_id of inventory unit to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return \SMS\Suppliers\Model\GetInventoryUnitResponse
      */
@@ -286,9 +286,9 @@ class InventoryUnitApi
     /**
      * Operation getInventoryUnitWithHttpInfo
      *
-     * Find inventory unit by ID
+     * Find inventory unit by supplier_item_id
      *
-     * @param string $id ID of inventory unit to return (required)
+     * @param string $id supplier_item_id of inventory unit to return (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return array of \SMS\Suppliers\Model\GetInventoryUnitResponse, HTTP status code, HTTP response headers (array of strings)
      */
@@ -439,7 +439,7 @@ class InventoryUnitApi
      *
      * Update inventory unit
      *
-     * @param string $id ID of inventory (required)
+     * @param string $id supplier_item_id of inventory unit (required)
      * @param \SMS\Suppliers\Model\UpdateInventoryUnitRequest $body Inventory unit object that needs to be updated (optional)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return void
@@ -455,7 +455,7 @@ class InventoryUnitApi
      *
      * Update inventory unit
      *
-     * @param string $id ID of inventory (required)
+     * @param string $id supplier_item_id of inventory unit (required)
      * @param \SMS\Suppliers\Model\UpdateInventoryUnitRequest $body Inventory unit object that needs to be updated (optional)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)

@@ -93,7 +93,7 @@ class OrderUnitApi
      * Cancel an order unit
      *
      * @param string $id ID of order unit to cancel (required)
-     * @param \SMS\Suppliers\Model\CancelOrderUnitRequest $body Order unit that should be cancelled (required)
+     * @param \SMS\Suppliers\Model\CancelOrderUnitRequest $body  (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return void
      */
@@ -109,7 +109,7 @@ class OrderUnitApi
      * Cancel an order unit
      *
      * @param string $id ID of order unit to cancel (required)
-     * @param \SMS\Suppliers\Model\CancelOrderUnitRequest $body Order unit that should be cancelled (required)
+     * @param \SMS\Suppliers\Model\CancelOrderUnitRequest $body  (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -284,7 +284,7 @@ class OrderUnitApi
      * Send an order unit
      *
      * @param string $id ID of order unit to mark as sent (required)
-     * @param \SMS\Suppliers\Model\SendOrderUnitRequest $body Order unit that should be marked as sent (required)
+     * @param \SMS\Suppliers\Model\SendOrderUnitRequest $body  (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return void
      */
@@ -300,7 +300,7 @@ class OrderUnitApi
      * Send an order unit
      *
      * @param string $id ID of order unit to mark as sent (required)
-     * @param \SMS\Suppliers\Model\SendOrderUnitRequest $body Order unit that should be marked as sent (required)
+     * @param \SMS\Suppliers\Model\SendOrderUnitRequest $body  (required)
      * @throws \SMS\Suppliers\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

@@ -5,8 +5,8 @@ All URIs are relative to *https://sms.real.de/api/v1/supplier*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createInventoryUnit**](InventoryUnitApi.md#createInventoryUnit) | **POST** /inventory-units | Create new inventory unit
-[**deleteInventoryUnit**](InventoryUnitApi.md#deleteInventoryUnit) | **DELETE** /inventory-units/{id} | Delete inventory unit by ID
-[**getInventoryUnit**](InventoryUnitApi.md#getInventoryUnit) | **GET** /inventory-units/{id} | Find inventory unit by ID
+[**deleteInventoryUnit**](InventoryUnitApi.md#deleteInventoryUnit) | **DELETE** /inventory-units/{id} | Delete inventory unit by supplier_item_id
+[**getInventoryUnit**](InventoryUnitApi.md#getInventoryUnit) | **GET** /inventory-units/{id} | Find inventory unit by supplier_item_id
 [**getInventoryUnits**](InventoryUnitApi.md#getInventoryUnits) | **GET** /inventory-units | Find all inventory units
 [**updateInventoryUnit**](InventoryUnitApi.md#updateInventoryUnit) | **PATCH** /inventory-units/{id} | Update inventory unit
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 # **deleteInventoryUnit**
 > deleteInventoryUnit($id)
 
-Delete inventory unit by ID
+Delete inventory unit by supplier_item_id
 
 Deletes a single inventory unit
 
@@ -87,7 +87,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
-$id = "id_example"; // string | ID of inventory unit to delete
+$id = "id_example"; // string | supplier_item_id of inventory unit to delete
 
 try {
     $api_instance->deleteInventoryUnit($id);
@@ -101,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of inventory unit to delete |
+ **id** | **string**| supplier_item_id of inventory unit to delete |
 
 ### Return type
 
@@ -121,7 +121,7 @@ void (empty response body)
 # **getInventoryUnit**
 > \SMS\Suppliers\Model\GetInventoryUnitResponse getInventoryUnit($id)
 
-Find inventory unit by ID
+Find inventory unit by supplier_item_id
 
 Returns a single inventory unit
 
@@ -140,7 +140,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
-$id = "id_example"; // string | ID of inventory unit to return
+$id = "id_example"; // string | supplier_item_id of inventory unit to return
 
 try {
     $result = $api_instance->getInventoryUnit($id);
@@ -155,7 +155,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of inventory unit to return |
+ **id** | **string**| supplier_item_id of inventory unit to return |
 
 ### Return type
 
@@ -226,7 +226,7 @@ void (empty response body)
 
 Update inventory unit
 
-Updates an inventory unit by specified ID
+Updates an inventory unit by specified supplier_item_id
 
 ### Example
 ```php
@@ -243,7 +243,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
-$id = "id_example"; // string | ID of inventory
+$id = "id_example"; // string | supplier_item_id of inventory unit
 $body = new \SMS\Suppliers\Model\UpdateInventoryUnitRequest(); // \SMS\Suppliers\Model\UpdateInventoryUnitRequest | Inventory unit object that needs to be updated
 
 try {
@@ -258,7 +258,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of inventory |
+ **id** | **string**| supplier_item_id of inventory unit |
  **body** | [**\SMS\Suppliers\Model\UpdateInventoryUnitRequest**](../Model/UpdateInventoryUnitRequest.md)| Inventory unit object that needs to be updated | [optional]
 
 ### Return type

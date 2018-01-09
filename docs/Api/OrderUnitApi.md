@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Cancel an order unit
 
-Cancel an order unit
+Cancels an order unit
 
 ### Example
 ```php
@@ -32,7 +32,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 
 $api_instance = new SMS\Suppliers\Api\OrderUnitApi();
 $id = "id_example"; // string | ID of order unit to cancel
-$body = new \SMS\Suppliers\Model\CancelOrderUnitRequest(); // \SMS\Suppliers\Model\CancelOrderUnitRequest | Order unit that should be cancelled
+$body = new \SMS\Suppliers\Model\CancelOrderUnitRequest(); // \SMS\Suppliers\Model\CancelOrderUnitRequest | 
 
 try {
     $api_instance->cancelOrderUnit($id, $body);
@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order unit to cancel |
- **body** | [**\SMS\Suppliers\Model\CancelOrderUnitRequest**](../Model/CancelOrderUnitRequest.md)| Order unit that should be cancelled |
+ **body** | [**\SMS\Suppliers\Model\CancelOrderUnitRequest**](../Model/CancelOrderUnitRequest.md)|  |
 
 ### Return type
 
@@ -122,7 +122,7 @@ void (empty response body)
 
 Send an order unit
 
-Confirm that an order unit has already been sent by a supplier
+Change order unit status to 'sent'
 
 ### Example
 ```php
@@ -140,7 +140,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 
 $api_instance = new SMS\Suppliers\Api\OrderUnitApi();
 $id = "id_example"; // string | ID of order unit to mark as sent
-$body = new \SMS\Suppliers\Model\SendOrderUnitRequest(); // \SMS\Suppliers\Model\SendOrderUnitRequest | Order unit that should be marked as sent
+$body = new \SMS\Suppliers\Model\SendOrderUnitRequest(); // \SMS\Suppliers\Model\SendOrderUnitRequest | 
 
 try {
     $api_instance->sendOrderUnit($id, $body);
@@ -155,7 +155,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| ID of order unit to mark as sent |
- **body** | [**\SMS\Suppliers\Model\SendOrderUnitRequest**](../Model/SendOrderUnitRequest.md)| Order unit that should be marked as sent |
+ **body** | [**\SMS\Suppliers\Model\SendOrderUnitRequest**](../Model/SendOrderUnitRequest.md)|  |
 
 ### Return type
 
