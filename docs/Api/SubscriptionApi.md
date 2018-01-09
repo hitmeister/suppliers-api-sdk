@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create new subscription
 
-Creates a new subscription for the specific event
+Subscribes a current api client to the specific event
 
 ### Example
 ```php
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 Get all existing subscriptions
 
-Returns all existing subscriptions by the specified id
+Returns all existing subscriptions for a current api client
 
 ### Example
 ```php

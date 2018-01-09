@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Confirm order
 
-Confirm that order has been received by a supplier
+Confirm that an order has been received
 
 ### Example
 ```php
