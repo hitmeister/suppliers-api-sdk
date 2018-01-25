@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **created_at** | **string** |  | 
 **status** | **string** |  | 
 **condition** | **string** |  | 
-**shipping_cost** | **float** |  | 
+**handling_costs** | **float** |  | 
+**freight_costs** | **float** |  | 
 **cancel_reason** | **string** |  | 
 **is_cancelled** | **bool** |  | 
 **item** | [**\SMS\Suppliers\Model\Item**](Item.md) |  | 

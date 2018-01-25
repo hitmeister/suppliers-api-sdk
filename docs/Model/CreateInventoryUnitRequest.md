@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **price** | **float** | Unit Price | 
 **quantity** | **int** | Unit Quantity | 
 **minimal_order_volume** | **int** | Minimal Order Volume | [optional] 
-**shipping_cost** | **float** | Shipping Cost | 
+**freight_costs** | **float** | Freight costs | 
+**handling_costs** | **float** | Handling costs | 
 **return_shipping_cost** | **float** | Return shipping Cost | [optional] 
 **delivery_min_time** | **int** | Minimal Delivery Time | 
 **delivery_max_time** | **int** | Maximum Delivery Time | 
