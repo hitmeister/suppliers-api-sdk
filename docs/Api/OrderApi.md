@@ -139,7 +139,7 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 
 $api_instance = new SMS\Suppliers\Api\OrderApi();
 $created_at = "created_at_example"; // string | Creation date of order
-$open = true; // bool | Order is not sent or canceled
+$open = "open_example"; // string | Order is not sent or canceled (values example: yes|true|1)
 
 try {
     $result = $api_instance->getOrders($created_at, $open);
@@ -155,7 +155,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created_at** | **string**| Creation date of order | [optional]
- **open** | **bool**| Order is not sent or canceled | [optional]
+ **open** | **string**| Order is not sent or canceled (values example: yes|true|1) | [optional]
 
 ### Return type
 
