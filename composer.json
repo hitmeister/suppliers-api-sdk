@@ -1,6 +1,6 @@
 {
     "name": "hitmeister/suppliers-api-sdk",
-    "version": "0.5.1",
+    "version": "0.6.0",
     "description": "Suppliers API SDK",
     "keywords": [
         "real.digital",
@@ -10,7 +10,7 @@
         "sdk",
         "api"
     ],
-    "homepage": "https://sms.real.de/api/docs",
+    "homepage": "https://sms.real.de/api/v1/docs",
     "license": "MIT",
     "authors": [
         {
