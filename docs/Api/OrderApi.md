@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrders**
-> \SMS\Suppliers\Model\GetFulfilmentOrdersResponse getOrders($created_at, $open)
+> \SMS\Suppliers\Model\GetFulfilmentOrdersResponse getOrders($created_at, $open, $limit, $page)
 
 Find all orders by given parameters
 
@@ -140,9 +140,11 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 $api_instance = new SMS\Suppliers\Api\OrderApi();
 $created_at = "created_at_example"; // string | Creation date of order
 $open = "open_example"; // string | Order is not sent or canceled (values example: yes|true|1)
+$limit = "100"; // string | Results per page
+$page = "1"; // string | Page number applied to the result set
 
 try {
-    $result = $api_instance->getOrders($created_at, $open);
+    $result = $api_instance->getOrders($created_at, $open, $limit, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->getOrders: ', $e->getMessage(), PHP_EOL;
@@ -156,6 +158,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created_at** | **string**| Creation date of order | [optional]
  **open** | **string**| Order is not sent or canceled (values example: yes|true|1) | [optional]
+ **limit** | **string**| Results per page | [optional] [default to 100]
+ **page** | **string**| Page number applied to the result set | [optional] [default to 1]
 
 ### Return type
 
