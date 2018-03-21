@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInventoryUnits**
-> getInventoryUnits()
+> getInventoryUnits($limit, $page)
 
 Find all inventory units
 
@@ -194,9 +194,11 @@ SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username'
 // SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
 
 $api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+$limit = "100"; // string | Results per page
+$page = "1"; // string | Page number applied to the result set
 
 try {
-    $api_instance->getInventoryUnits();
+    $api_instance->getInventoryUnits($limit, $page);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryUnitApi->getInventoryUnits: ', $e->getMessage(), PHP_EOL;
 }
@@ -204,7 +206,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **string**| Results per page | [optional] [default to 100]
+ **page** | **string**| Page number applied to the result set | [optional] [default to 1]
 
 ### Return type
 
