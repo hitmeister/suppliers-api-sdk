@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**item_id** | **int** | Item ID | 
+**item_id** | **int** | Item ID | [optional] 
 **condition** | **string** | Unit condition | [optional] 
 **ean** | **string** | EAN | 
 **price** | **float** | Unit Price | 
 **quantity** | **int** | Unit Quantity | 
 **minimal_order_volume** | **int** | Minimal Order Volume | [optional] 
-**freight_costs** | **float** | Freight costs | 
+**freight_costs** | **float** | Freight costs | [optional] 
 **handling_costs** | **float** | Handling costs | 
 **return_shipping_cost** | **float** | Return shipping Cost | [optional] 
 **delivery_min_time** | **int** | Minimal Delivery Time | 
