@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **delivery_max_time** | **int** | Maximum Delivery Time | 
 **is_hauler_delivery** | **bool** | If this unit required a hauler delivery | [optional] 
 **supplier_item_id** | **string** | Supplier Item ID | 
+**reverse_charge** | **int** | Reverse charge | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
