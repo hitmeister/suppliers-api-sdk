@@ -61,7 +61,7 @@ class Configuration
      *
      * @var integer
      */
-    protected $apiVersion = 2;
+    protected $apiVersion = 1;
 
     /**
      * Access token for OAuth
@@ -83,6 +83,13 @@ class Configuration
      * @var string
      */
     protected $password = '';
+
+    /**
+     * The host
+     *
+     * @var string
+     */
+    protected $host = '';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
@@ -265,13 +272,26 @@ class Configuration
     }
 
     /**
+     * Sets the host
+     *
+     * @param string $host Host
+     *
+     * @return $this
+     */
+    public function setHost($host)
+    {
+        $this->host = $host;
+        return $this;
+    }
+
+    /**
      * Gets the host
      *
      * @return string Host
      */
     public function getHost()
     {
-        return sprintf(self::HOST_TEMPLATE, $this->getApiVersion());
+        return $this->host === '' ? sprintf(self::HOST_TEMPLATE, $this->getApiVersion()) : $this->host;
     }
 
     /**
