@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **reverse_charge** | **int** | Reverse charge | [optional] 
 **currency** | **string** | Currency | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

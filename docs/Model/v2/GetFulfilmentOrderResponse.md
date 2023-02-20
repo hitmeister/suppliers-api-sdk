@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **shipment_data** | [**\SMS\Suppliers\Model\v2\ShipmentData[]**](ShipmentData.md) |  | [optional] 
 **shipment_address** | [**\SMS\Suppliers\Model\v2\ShipmentAddress**](ShipmentAddress.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

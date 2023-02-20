@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **units_per_layer** | **float** | Amount of units per layer | 
 **unit_layers_per_pallet** | **float** | Amount of unit layers per pallet | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

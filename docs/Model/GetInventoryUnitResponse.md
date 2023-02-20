@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **delivery_max_time** | **int** | Maximum Delivery Time | 
 **is_hauler_delivery** | **bool** | If this unit required a hauler delivery | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

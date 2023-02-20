@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **delivery_min_time** | **int** | Min delivery time in days | 
 **delivery_max_time** | **int** | Max delivery time in days | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

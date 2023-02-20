@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **units_per_layer** | **int** | units per layer of package as integer | 
 **unit_layers_per_pallet** | **int** | unit layers per pallet of package as integer | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 

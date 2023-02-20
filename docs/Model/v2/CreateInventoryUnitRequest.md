@@ -13,6 +13,6 @@ Name | Type | Description | Notes
 **origin_manufacturer_country** | **string** | Origin Manufacturer Country of the unit (in ISO-Alpha2 Format) | [optional] 
 **country_values** | [**\SMS\Suppliers\Model\v2\CreateInventoryCountryValuesRequest[]**](CreateInventoryCountryValuesRequest.md) | Country specific values | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../../README.md#documentation-for-models) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to README]](../../../README.md)
 
 
