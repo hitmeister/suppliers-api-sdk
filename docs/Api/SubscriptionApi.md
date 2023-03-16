@@ -1,6 +1,6 @@
 # SMS\Suppliers\SubscriptionApi
 
-All URIs are relative to *https://sms.real.de/api/v1/supplier*
+All URIs are relative to *https://sms.kaufland.de/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,25 +24,34 @@ Subscribes a current api client to the specific event
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$apiInstance = new SMS\Suppliers\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \SMS\Suppliers\Model\CreateSubscriptionRequest(); // \SMS\Suppliers\Model\CreateSubscriptionRequest | Subscription object that needs to be created
 
 try {
-    $result = $api_instance->createSubscription($body);
+    $result = $apiInstance->createSubscription($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscription: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -78,24 +87,33 @@ Deletes an existing subscription by the specified id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$apiInstance = new SMS\Suppliers\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of Subscription
 
 try {
-    $api_instance->deleteSubscription($id);
+    $apiInstance->deleteSubscription($id);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->deleteSubscription: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -131,26 +149,35 @@ Updates an existing subscription by the specified id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$apiInstance = new SMS\Suppliers\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of Subscription
 $body = new \SMS\Suppliers\Model\UpdateSubscriptionRequest(); // \SMS\Suppliers\Model\UpdateSubscriptionRequest | Subscription object that needs to be created
 
 try {
-    $result = $api_instance->updateSubscription($id, $body);
+    $result = $apiInstance->updateSubscription($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->updateSubscription: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -187,25 +214,34 @@ Returns an existing subscription by the specified id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$apiInstance = new SMS\Suppliers\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of Subscription
 
 try {
-    $result = $api_instance->viewSubscription($id);
+    $result = $apiInstance->viewSubscription($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->viewSubscription: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -229,7 +265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **viewSubscriptions**
-> viewSubscriptions()
+> \SMS\Suppliers\Model\ViewSubscriptionResponse[] viewSubscriptions()
 
 Get all existing subscriptions
 
@@ -241,30 +277,40 @@ Returns all existing subscriptions for a current api client
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\SubscriptionApi();
+$apiInstance = new SMS\Suppliers\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $api_instance->viewSubscriptions();
+    $result = $apiInstance->viewSubscriptions();
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->viewSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**\SMS\Suppliers\Model\ViewSubscriptionResponse[]**](../Model/ViewSubscriptionResponse.md)
 
 ### Authorization
 

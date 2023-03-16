@@ -7,16 +7,16 @@ Name | Type | Description | Notes
 **created_at** | **string** |  | 
 **status** | **string** |  | 
 **condition** | **string** |  | 
-**handling_costs** | **float** |  | 
-**freight_costs** | **float** |  | 
+**handling_costs** | **float** |  | [optional] 
+**freight_costs** | **float** |  | [optional] 
 **cancel_reason** | **string** |  | 
 **is_cancelled** | **bool** |  | 
 **item** | [**\SMS\Suppliers\Model\Item**](Item.md) |  | 
 **sku** | **string** |  | 
-**price** | **float** |  | 
+**price** | **float** | Supplier price | 
 **delivery_time_expires** | **string** |  | 
 **customer_order_unit_status** | **string** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

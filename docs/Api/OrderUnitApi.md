@@ -1,6 +1,6 @@
 # SMS\Suppliers\OrderUnitApi
 
-All URIs are relative to *https://sms.real.de/api/v1/supplier*
+All URIs are relative to *https://sms.kaufland.de/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,25 +24,34 @@ Cancels an order unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
+$apiInstance = new SMS\Suppliers\Api\OrderUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of order unit to cancel
 $body = new \SMS\Suppliers\Model\CancelOrderUnitRequest(); // \SMS\Suppliers\Model\CancelOrderUnitRequest | 
 
 try {
-    $api_instance->cancelOrderUnit($id, $body);
+    $apiInstance->cancelOrderUnit($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling OrderUnitApi->cancelOrderUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -79,25 +88,34 @@ Returns a single order unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
+$apiInstance = new SMS\Suppliers\Api\OrderUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of order unit to return
 
 try {
-    $result = $api_instance->getOrderUnit($id);
+    $result = $apiInstance->getOrderUnit($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderUnitApi->getOrderUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -133,24 +151,33 @@ Change order unit status to 'picking'
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
+$apiInstance = new SMS\Suppliers\Api\OrderUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of order unit to update the status
 
 try {
-    $api_instance->pickOrderUnit($id);
+    $apiInstance->pickOrderUnit($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderUnitApi->pickOrderUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -186,25 +213,34 @@ Change order unit status to 'sent'
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
+$apiInstance = new SMS\Suppliers\Api\OrderUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of order unit to mark as sent
 $body = new \SMS\Suppliers\Model\SendOrderUnitRequest(); // \SMS\Suppliers\Model\SendOrderUnitRequest | 
 
 try {
-    $api_instance->sendOrderUnit($id, $body);
+    $apiInstance->sendOrderUnit($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling OrderUnitApi->sendOrderUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -241,25 +277,34 @@ Update carrier and tracking number of the shipment
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\OrderUnitApi();
+$apiInstance = new SMS\Suppliers\Api\OrderUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of order unit to update shipment data
 $body = new \SMS\Suppliers\Model\UpdateOrderUnitShipmentDataRequest(); // \SMS\Suppliers\Model\UpdateOrderUnitShipmentDataRequest | 
 
 try {
-    $api_instance->updateOrderUnitShipment($id, $body);
+    $apiInstance->updateOrderUnitShipment($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling OrderUnitApi->updateOrderUnitShipment: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 

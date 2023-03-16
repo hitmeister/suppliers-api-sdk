@@ -8,14 +8,18 @@
     <testsuites>
         <testsuite>
             <directory>./test/Api</directory>
+            <directory>./test/Api/v2</directory>
             <directory>./test/Model</directory>
+            <directory>./test/Model/v2</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./lib/Api</directory>
+            <directory suffix=".php">./lib/Api/v2</directory>
             <directory suffix=".php">./lib/Model</directory>
+            <directory suffix=".php">./lib/Model/v2</directory>
         </whitelist>
     </filter>
 </phpunit>

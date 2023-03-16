@@ -1,6 +1,6 @@
 {
     "name": "hitmeister/suppliers-api-sdk",
-    "version": "0.12.0",
+    "version": "0.13.0",
     "description": "Suppliers API SDK",
     "keywords": [
         "real.digital",
@@ -10,12 +10,12 @@
         "sdk",
         "api"
     ],
-    "homepage": "https://sms.real.de/api/v1/docs",
+    "homepage": "https://sms.kaufland.de/api/v1/specs/?url=/api/v2/specs/supplier_api.yaml",
     "license": "MIT",
     "authors": [
         {
-            "email": "sms.tech@real-digital.de",
-            "name": "real.digital",
+            "email": "sms.tech@kaufland-online.com",
+            "name": "Kaufland",
             "homepage": "https://github.com/hitmeister/suppliers-api-sdk"
         },
         {
@@ -24,16 +24,16 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.5",
         "ext-curl": "*",
         "ext-json": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8",
-        "satooshi/php-coveralls": "~1.0",
+        "phpunit/phpunit": "^4.8",
         "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~1.12"
+        "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
         "psr-4": { "SMS\\Suppliers\\" : "lib/" }

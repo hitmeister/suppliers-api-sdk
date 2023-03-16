@@ -1,6 +1,6 @@
 # SMS\Suppliers\InventoryApi
 
-All URIs are relative to *https://sms.real.de/api/v1/supplier*
+All URIs are relative to *https://sms.kaufland.de/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,25 +21,34 @@ Adds inventory import request to the queue
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\InventoryApi();
+$apiInstance = new SMS\Suppliers\Api\InventoryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of inventory
 $body = new \SMS\Suppliers\Model\CreateImportRequest(); // \SMS\Suppliers\Model\CreateImportRequest | Inventory import request which stores all the necessary info
 
 try {
-    $api_instance->createImportRequest($id, $body);
+    $apiInstance->createImportRequest($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->createImportRequest: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -76,25 +85,34 @@ Returns a single inventory
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\InventoryApi();
+$apiInstance = new SMS\Suppliers\Api\InventoryApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | ID of inventory to return
 
 try {
-    $result = $api_instance->getInventory($id);
+    $result = $apiInstance->getInventory($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryApi->getInventory: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 

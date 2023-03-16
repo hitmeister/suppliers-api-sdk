@@ -1,6 +1,6 @@
 # SMS\Suppliers\InventoryUnitApi
 
-All URIs are relative to *https://sms.real.de/api/v1/supplier*
+All URIs are relative to *https://sms.kaufland.de/api/v1/supplier*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,25 +24,34 @@ Creates a new inventory unit with specified data
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+$apiInstance = new SMS\Suppliers\Api\InventoryUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $body = new \SMS\Suppliers\Model\CreateInventoryUnitRequest(); // \SMS\Suppliers\Model\CreateInventoryUnitRequest | Inventory unit object that needs to be added to the inventory
 
 try {
-    $result = $api_instance->createInventoryUnit($body);
+    $result = $apiInstance->createInventoryUnit($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryUnitApi->createInventoryUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -78,24 +87,33 @@ Deletes a single inventory unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+$apiInstance = new SMS\Suppliers\Api\InventoryUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | supplier_item_id of inventory unit to delete
 
 try {
-    $api_instance->deleteInventoryUnit($id);
+    $apiInstance->deleteInventoryUnit($id);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryUnitApi->deleteInventoryUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -131,25 +149,34 @@ Returns a single inventory unit
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+$apiInstance = new SMS\Suppliers\Api\InventoryUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | supplier_item_id of inventory unit to return
 
 try {
-    $result = $api_instance->getInventoryUnit($id);
+    $result = $apiInstance->getInventoryUnit($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryUnitApi->getInventoryUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -173,7 +200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInventoryUnits**
-> getInventoryUnits($limit, $page)
+> \SMS\Suppliers\Model\GetInventoryUnitResponse[] getInventoryUnits($limit, $page)
 
 Find all inventory units
 
@@ -185,25 +212,35 @@ Returns a list of inventory units
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+$apiInstance = new SMS\Suppliers\Api\InventoryUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $limit = 100; // int | Results per page
 $page = 1; // int | Page number applied to the result set
 
 try {
-    $api_instance->getInventoryUnits($limit, $page);
+    $result = $apiInstance->getInventoryUnits($limit, $page);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryUnitApi->getInventoryUnits: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
@@ -214,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\SMS\Suppliers\Model\GetInventoryUnitResponse[]**](../Model/GetInventoryUnitResponse.md)
 
 ### Authorization
 
@@ -240,25 +277,34 @@ Updates an inventory unit by specified supplier_item_id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-key', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-key', 'Bearer');
 // Configure API key authorization: apiUsername
-SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_API_KEY');
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKey('api-username', 'YOUR_PARAMETER_VALUE');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// $config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiKeyPrefix('api-username', 'Bearer');
+// Set API version (1 or 2)
+$config = SMS\Suppliers\Configuration::getDefaultConfiguration()->setApiVersion(1);
 
-$api_instance = new SMS\Suppliers\Api\InventoryUnitApi();
+$apiInstance = new SMS\Suppliers\Api\InventoryUnitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | supplier_item_id of inventory unit
 $body = new \SMS\Suppliers\Model\UpdateInventoryUnitRequest(); // \SMS\Suppliers\Model\UpdateInventoryUnitRequest | Inventory unit object that needs to be updated
 
 try {
-    $api_instance->updateInventoryUnit($id, $body);
+    $apiInstance->updateInventoryUnit($id, $body);
 } catch (Exception $e) {
     echo 'Exception when calling InventoryUnitApi->updateInventoryUnit: ', $e->getMessage(), PHP_EOL;
 }
+
 ?>
 ```
+
 
 ### Parameters
 
